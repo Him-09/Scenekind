@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+.vercel
+Video
+next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+.env*.local
