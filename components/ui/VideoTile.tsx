@@ -32,7 +32,7 @@ export default function VideoTile({
     if (!el) return;
     const observer = new IntersectionObserver(
       ([entry]) => setInView(entry.isIntersecting),
-      { threshold: 0.35 }
+      { rootMargin: "160px 0px", threshold: 0.12 }
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -64,11 +64,15 @@ export default function VideoTile({
           ref={videoRef}
           src={src}
           poster={poster}
+          autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           aria-label={label}
+          onLoadedData={() => {
+            if (inView) videoRef.current?.play().catch(() => {});
+          }}
           onError={() => setFailed(true)}
           className="h-full w-full object-cover transition-transform duration-700 ease-studio group-hover/tile:scale-[1.03]"
         />

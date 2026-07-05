@@ -14,6 +14,7 @@ export type CarouselItem = {
 type HeroCarouselProps = {
   items: CarouselItem[];
   className?: string;
+  compact?: boolean;
 };
 
 /**
@@ -21,7 +22,11 @@ type HeroCarouselProps = {
  * touch/scroll, with previous/next arrow controls. Auto-scroll pauses on
  * hover and interaction, and is disabled for prefers-reduced-motion.
  */
-export default function HeroCarousel({ items, className }: HeroCarouselProps) {
+export default function HeroCarousel({
+  items,
+  className,
+  compact = false,
+}: HeroCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
   const [reduced, setReduced] = useState(false);
@@ -76,13 +81,21 @@ export default function HeroCarousel({ items, className }: HeroCarouselProps) {
         onTouchEnd={() =>
           window.setTimeout(() => (pausedRef.current = false), 2000)
         }
-        className="scrollbar-none flex gap-5 overflow-x-auto px-6 lg:px-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className={cn(
+          "scrollbar-none flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          compact ? "gap-3 px-6" : "gap-5 px-6 lg:px-10"
+        )}
       >
         {[...items, ...items].map((item, i) => (
           <div
             key={`${item.label}-${i}`}
             aria-hidden={i >= items.length}
-            className="relative w-[220px] shrink-0 md:w-[260px] 2xl:w-[320px]"
+            className={cn(
+              "relative shrink-0",
+              compact
+                ? "w-[164px] sm:w-[200px]"
+                : "w-[220px] md:w-[260px] 2xl:w-[320px]"
+            )}
           >
             <VideoTile
               src={item.src}
@@ -102,7 +115,12 @@ export default function HeroCarousel({ items, className }: HeroCarouselProps) {
       </div>
 
       {/* Arrow controls */}
-      <div className="mt-6 flex justify-end gap-3 px-6 lg:px-10">
+      <div
+        className={cn(
+          "mt-6 justify-end gap-3 px-6 lg:px-10",
+          compact ? "hidden" : "flex"
+        )}
+      >
         <button
           type="button"
           onClick={() => scrollByTile(-1)}

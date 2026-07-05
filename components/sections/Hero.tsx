@@ -10,7 +10,7 @@ import HeroCarousel, { type CarouselItem } from "@/components/ui/HeroCarousel";
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 const fadeUp = (reduced: boolean, delay: number) => ({
-  initial: { opacity: 0, y: reduced ? 0 : 34 },
+  initial: { opacity: 1, y: 0 },
   animate: { opacity: 1, y: 0 },
   transition: { duration: reduced ? 0.2 : 0.9, delay, ease },
 });
@@ -58,7 +58,7 @@ export default function Hero() {
       ref={sectionRef}
       id="top"
       aria-label="Introduction"
-      className="relative overflow-hidden pb-16 pt-32 md:pt-40"
+      className="relative overflow-hidden pb-12 pt-24 md:pb-16 md:pt-40"
     >
       <div
         data-hero-content
@@ -66,7 +66,7 @@ export default function Hero() {
       >
         <motion.p
           {...fadeUp(!!reduced, 0.05)}
-          className="mb-8 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist"
+          className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist md:mb-8"
         >
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
           AI-First Creative Production Studio
@@ -74,15 +74,22 @@ export default function Hero() {
 
         <motion.h1
           {...fadeUp(!!reduced, 0.15)}
-          className="max-w-5xl font-display text-display-xl font-medium text-ink"
+          className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] text-ink md:max-w-5xl md:text-display-xl"
         >
           Cinematic ad production, without the traditional production drag.
         </motion.h1>
 
-        <div className="mt-10 flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
+        <motion.div
+          {...fadeUp(!!reduced, 0.28)}
+          className="-mx-6 mt-8 md:hidden"
+        >
+          <HeroCarousel items={reel} compact />
+        </motion.div>
+
+        <div className="mt-8 flex flex-col gap-8 md:mt-10 md:flex-row md:items-end md:justify-between md:gap-10">
           <motion.p
             {...fadeUp(!!reduced, 0.3)}
-            className="max-w-xl text-lg leading-relaxed text-mist"
+            className="max-w-[21rem] text-base leading-relaxed text-mist md:max-w-xl md:text-lg"
           >
             We turn campaign ideas into realistic commercials, product ads,
             motion design, and creator-style assets through AI-first workflows
@@ -104,7 +111,7 @@ export default function Hero() {
       </div>
 
       {/* Media carousel */}
-      <motion.div {...fadeUp(!!reduced, 0.55)} className="mt-16">
+      <motion.div {...fadeUp(!!reduced, 0.55)} className="mt-16 hidden md:block">
         <HeroCarousel items={reel} />
       </motion.div>
 
