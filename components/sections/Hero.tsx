@@ -101,7 +101,7 @@ export default function Hero() {
             className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center"
           >
             <Button href="/contact?intent=starter-sprint" size="lg" withArrow>
-              Start the $497 Sprint
+              Start the $295 Sprint
             </Button>
             <Button href="/contact?intent=teardown" size="lg" variant="outline">
               Get a Free Teardown

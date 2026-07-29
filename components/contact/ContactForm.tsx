@@ -26,9 +26,16 @@ export default function ContactForm() {
     const intent = params.get("intent");
 
     if (intent === "starter-sprint") {
-      setService("Starter Sprint ($497)");
+      setService("Starter Sprint ($295)");
       setMessage(
-        "I want to start the $497 Starter Sprint. Please send the next steps."
+        "I want to start the $295 Starter Sprint. Please send the next steps."
+      );
+    }
+
+    if (intent === "launch-pack") {
+      setService("Launch Pack ($2,400)");
+      setMessage(
+        "I want to start a Launch Pack. Here is the product we are launching:"
       );
     }
 
@@ -40,14 +47,21 @@ export default function ContactForm() {
     }
 
     if (intent === "campaign-build") {
-      setService("AI Commercial");
+      setService("Campaign Build ($4,900)");
       setMessage(
         "I want to scope a Campaign Build. Here is what we are launching:"
       );
     }
 
+    if (intent === "flagship-film") {
+      setService("Flagship Film ($5,900)");
+      setMessage(
+        "I want to plan a Flagship Film. Here is the brand or product story:"
+      );
+    }
+
     if (intent === "creative-engine") {
-      setService("Product Ads");
+      setService("Creative Engine monthly");
       setMessage(
         "I want to plan ongoing creative output. Here is our current testing calendar:"
       );

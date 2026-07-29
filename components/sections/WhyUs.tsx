@@ -13,7 +13,7 @@ const benefits = [
   {
     icon: Timer,
     title: "First ad sprint in 5 days",
-    body: "Starter Sprint gives you one directed product ad or creator-style demo in five business days, with strategy and craft still included.",
+    body: "Starter Sprint gives you three hooks on one product, delivered as three ready-to-run ads in five business days.",
   },
   {
     icon: MapPinOff,

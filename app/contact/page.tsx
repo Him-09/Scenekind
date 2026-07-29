@@ -9,14 +9,14 @@ import { contactEmail, ogImage, siteName } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start the $497 Scenekind Starter Sprint, request a free Creative Teardown, or scope a larger AI-first product ad campaign.",
+    "Start the $295 Scenekind Starter Sprint, request a free Creative Teardown, or scope a larger fixed-price AI-first product ad package.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: `Contact | ${siteName}`,
     description:
-      "Start the $497 Starter Sprint or request a free Creative Teardown from Scenekind.",
+      "Start the $295 Starter Sprint or request a free Creative Teardown from Scenekind.",
     url: "/contact",
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     title: `Contact | ${siteName}`,
     description:
-      "Start the $497 Starter Sprint or request a free Creative Teardown from Scenekind.",
+      "Start the $295 Starter Sprint or request a free Creative Teardown from Scenekind.",
     images: [ogImage],
   },
 };
@@ -39,7 +39,7 @@ const expectations = [
   {
     step: "01",
     title: "Pick your entry point",
-    body: "Start the $497 sprint, ask for a free teardown, or scope a larger build.",
+    body: "Start the $295 sprint, ask for a free teardown, or choose a fixed-price package.",
   },
   {
     step: "02",
@@ -75,7 +75,7 @@ export default function ContactPage() {
                 Start the sprint or get a free teardown.
               </h1>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">
-                Choose the $497 Starter Sprint when you want a finished ad, or
+                Choose the $295 Starter Sprint when you want finished ads, or
                 ask for a Creative Teardown when you want a quick read on what
                 your current creative should test next.
               </p>

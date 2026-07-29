@@ -11,7 +11,7 @@ const links = [
   { href: "/#services", label: "Services" },
   { href: "/#work", label: "Work" },
   { href: "/#process", label: "Process" },
-  { href: "/#engagements", label: "Engagements" },
+  { href: "/#engagements", label: "Pricing" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -62,7 +62,7 @@ export default function Nav() {
 
         <div className="hidden md:block">
           <Button href="/contact?intent=starter-sprint" size="md">
-            Start $497 Sprint
+            Start $295 Sprint
           </Button>
         </div>
 
@@ -108,7 +108,7 @@ export default function Nav() {
                   className="w-full"
                   size="md"
                 >
-                  Start $497 Sprint
+                  Start $295 Sprint
                 </Button>
               </li>
             </ul>

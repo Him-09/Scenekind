@@ -22,8 +22,9 @@ export default function FinalCTA() {
               Put one scroll-stopping product ad in market this week.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#F2F0EA]/65 md:text-lg">
-              Start with the $497 sprint: one focused concept, one polished
-              asset, one revision round, and delivery in five business days.
+              Start with the $295 sprint: three hooks on one product, three
+              ready-to-run ads, all four ratios, one revision round, and
+              delivery in five business days.
             </p>
             <div className="mt-10 flex justify-center">
               <Button
@@ -32,7 +33,7 @@ export default function FinalCTA() {
                 variant="inverse"
                 withArrow
               >
-                Start the $497 Sprint
+                Start the $295 Sprint
               </Button>
             </div>
             <p className="mt-10 text-xs uppercase tracking-[0.22em] text-[#F2F0EA]/40">
