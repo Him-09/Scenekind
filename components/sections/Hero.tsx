@@ -69,14 +69,14 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist md:mb-8"
         >
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
-          AI-First Creative Production Studio
+          5-day ad sprint for product brands
         </motion.p>
 
         <motion.h1
           {...fadeUp(!!reduced, 0.15)}
           className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] text-ink md:max-w-5xl md:text-display-xl"
         >
-          Cinematic ad production, without the traditional production drag.
+          Scroll-stopping product ads, live in 5 days.
         </motion.h1>
 
         <motion.div
@@ -91,23 +91,43 @@ export default function Hero() {
             {...fadeUp(!!reduced, 0.3)}
             className="max-w-[21rem] text-base leading-relaxed text-mist md:max-w-xl md:text-lg"
           >
-            We turn campaign ideas into realistic commercials, product ads,
-            motion design, and creator-style assets through AI-first workflows
-            — faster, without sacrificing direction or polish.
+            Get a polished product ad, creator-style demo, or launch film
+            without hiring a crew, sourcing creators, or waiting through a
+            month-long production cycle.
           </motion.p>
 
           <motion.div
             {...fadeUp(!!reduced, 0.4)}
             className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <Button href="/contact" size="lg" withArrow>
-              Book a Creative Call
+            <Button href="/contact?intent=starter-sprint" size="lg" withArrow>
+              Start the $497 Sprint
             </Button>
-            <Button href="/#services" size="lg" variant="outline">
-              Explore Services
+            <Button href="/contact?intent=teardown" size="lg" variant="outline">
+              Get a Free Teardown
             </Button>
           </motion.div>
         </div>
+
+        <motion.div
+          {...fadeUp(!!reduced, 0.48)}
+          className="mt-8 grid max-w-3xl grid-cols-3 border-y border-line py-5 md:mt-12"
+        >
+          {[
+            ["3", "brands in pilot"],
+            ["40+", "assets produced"],
+            ["5 days", "sprint turnaround"],
+          ].map(([value, label]) => (
+            <div key={label} className="pr-4">
+              <p className="font-display text-2xl font-medium text-ink md:text-3xl">
+                {value}
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-mist">
+                {label}
+              </p>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Media carousel */}
@@ -119,8 +139,8 @@ export default function Hero() {
         {...fadeUp(!!reduced, 0.7)}
         className="mx-auto mt-10 max-w-wrap px-6 text-sm text-mist lg:px-10"
       >
-        AI-first creative production for commercials, product ads, motion
-        design, and creator-style campaigns.
+        Fixed-scope sprint, campaign builds, and ongoing creative batches for
+        brands that need quality video without agency drag.
       </motion.p>
     </section>
   );

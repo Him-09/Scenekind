@@ -169,8 +169,13 @@ export default function Services() {
           ))}
         </div>
         <Reveal delay={0.2} className="mt-12 text-center">
-          <Button href="#contact" variant="outline" size="lg" withArrow>
-            Request a Quote
+          <Button
+            href="/contact?intent=teardown"
+            variant="outline"
+            size="lg"
+            withArrow
+          >
+            Get a Free Creative Teardown
           </Button>
         </Reveal>
       </div>

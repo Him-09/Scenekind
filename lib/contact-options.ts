@@ -1,4 +1,6 @@
 export const services = [
+  "Starter Sprint ($497)",
+  "Free Creative Teardown",
   "AI Commercial",
   "Product Ads",
   "Motion Design",

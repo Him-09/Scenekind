@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useEffect, useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { services, timelines } from "@/lib/contact-options";
 import { contactEmail } from "@/lib/site";
@@ -20,6 +20,39 @@ export default function ContactForm() {
     "idle"
   );
   const [error, setError] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const intent = params.get("intent");
+
+    if (intent === "starter-sprint") {
+      setService("Starter Sprint ($497)");
+      setMessage(
+        "I want to start the $497 Starter Sprint. Please send the next steps."
+      );
+    }
+
+    if (intent === "teardown") {
+      setService("Free Creative Teardown");
+      setMessage(
+        "I want a free Creative Teardown. Here is the product, landing page, or ad account context:"
+      );
+    }
+
+    if (intent === "campaign-build") {
+      setService("AI Commercial");
+      setMessage(
+        "I want to scope a Campaign Build. Here is what we are launching:"
+      );
+    }
+
+    if (intent === "creative-engine") {
+      setService("Product Ads");
+      setMessage(
+        "I want to plan ongoing creative output. Here is our current testing calendar:"
+      );
+    }
+  }, []);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();

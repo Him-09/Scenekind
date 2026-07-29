@@ -16,31 +16,27 @@ export default function FinalCTA() {
                 aria-hidden="true"
                 className="h-1.5 w-1.5 rounded-full bg-[#F2F0EA]"
               />
-              Free 20-min creative call
+              Fixed-price Starter Sprint
             </p>
             <h2 className="mx-auto max-w-3xl font-display text-display-lg font-medium">
-              Ready to build your next campaign without the production
-              bottleneck?
+              Put one scroll-stopping product ad in market this week.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#F2F0EA]/65 md:text-lg">
-              Tell us what you&apos;re launching, selling, or testing. We&apos;ll come
-              back with a concept direction, a scope, and a timeline — usually
-              within two business days.
+              Start with the $497 sprint: one focused concept, one polished
+              asset, one revision round, and delivery in five business days.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact" size="lg" variant="inverse" withArrow>
-                Book a Creative Call
-              </Button>
+            <div className="mt-10 flex justify-center">
               <Button
-                href="/contact"
+                href="/contact?intent=starter-sprint"
                 size="lg"
-                className="border border-[#F2F0EA]/30 bg-transparent text-[#F2F0EA] hover:border-[#F2F0EA] hover:bg-[#F2F0EA] hover:text-[#171716]"
+                variant="inverse"
+                withArrow
               >
-                Request a Quote
+                Start the $497 Sprint
               </Button>
             </div>
             <p className="mt-10 text-xs uppercase tracking-[0.22em] text-[#F2F0EA]/40">
-              Commercials · Product Ads · Motion Design · Creator-Style Video
+              Product Ads | Creator-Style Video | Launch Spots
             </p>
           </div>
         </Reveal>

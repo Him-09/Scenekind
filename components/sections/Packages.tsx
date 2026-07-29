@@ -5,18 +5,26 @@ import Button from "@/components/ui/Button";
 const models = [
   {
     name: "Starter Sprint",
-    tagline: "A focused first project",
-    bestFor: "Teams that want to see the quality before committing to more.",
+    badge: "Fixed-price entry",
+    price: "$497",
+    priceNote: "one focused sprint",
+    tagline: "A 5-day paid test",
+    bestFor: "Teams that want a real product ad before committing to a larger campaign.",
     deliverables: [
-      "One focused ad or a small creative batch",
+      "One focused product ad or creator-style demo",
       "Concept, script, and direction included",
-      "Delivered in all key ratios",
+      "One primary format + one platform cutdown",
       "One structured revision round",
     ],
-    featured: false,
+    cta: "Start the $497 Sprint",
+    href: "/contact?intent=starter-sprint",
+    featured: true,
   },
   {
     name: "Campaign Build",
+    badge: "Most requested",
+    price: "Custom",
+    priceNote: "scoped after brief",
     tagline: "A full multi-platform launch",
     bestFor: "Launches and campaigns that need hero and performance assets together.",
     deliverables: [
@@ -25,10 +33,15 @@ const models = [
       "Motion design package",
       "Full format & ratio delivery",
     ],
-    featured: true,
+    cta: "Scope a Campaign",
+    href: "/contact?intent=campaign-build",
+    featured: false,
   },
   {
     name: "Creative Engine",
+    badge: "Monthly",
+    price: "Custom",
+    priceNote: "ongoing production",
     tagline: "Ongoing monthly production",
     bestFor: "Brands running always-on paid social and continuous testing.",
     deliverables: [
@@ -37,6 +50,8 @@ const models = [
       "Priority turnaround",
       "Quarterly creative strategy review",
     ],
+    cta: "Plan Monthly Output",
+    href: "/contact?intent=creative-engine",
     featured: false,
   },
 ];
@@ -52,7 +67,7 @@ export default function Packages() {
         <SectionHeading
           eyebrow="Engagement Models"
           title="Three ways to work with us."
-          intro="Scoped to your campaign, not a rate card. Tell us what you're building and we'll shape the engagement around it."
+          intro="Start small with a fixed-price sprint, then scale into campaign builds or monthly creative output when the work proves itself."
         />
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {models.map((model, i) => (
@@ -64,11 +79,15 @@ export default function Packages() {
                     : "border-line bg-cream-card hover:border-ink/30"
                 }`}
               >
-                {model.featured && (
-                  <span className="mb-5 inline-flex w-fit rounded-full border border-[#F2F0EA]/25 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#F2F0EA]/80">
-                    Most requested
-                  </span>
-                )}
+                <span
+                  className={`mb-5 inline-flex w-fit rounded-full border px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] ${
+                    model.featured
+                      ? "border-[#F2F0EA]/25 text-[#F2F0EA]/80"
+                      : "border-line text-mist"
+                  }`}
+                >
+                  {model.badge}
+                </span>
                 <h3
                   className={`font-display text-3xl font-medium ${
                     model.featured ? "text-[#F2F0EA]" : "text-ink"
@@ -83,6 +102,26 @@ export default function Packages() {
                 >
                   {model.tagline}
                 </p>
+                <div
+                  className={`mt-5 border-t pt-5 ${
+                    model.featured ? "border-[#F2F0EA]/20" : "border-line"
+                  }`}
+                >
+                  <p
+                    className={`font-display text-5xl font-medium ${
+                      model.featured ? "text-[#F2F0EA]" : "text-ink"
+                    }`}
+                  >
+                    {model.price}
+                  </p>
+                  <p
+                    className={`mt-1 text-xs uppercase tracking-[0.2em] ${
+                      model.featured ? "text-[#F2F0EA]/50" : "text-mist"
+                    }`}
+                  >
+                    {model.priceNote}
+                  </p>
+                </div>
                 <p
                   className={`mt-5 text-sm leading-relaxed ${
                     model.featured ? "text-[#F2F0EA]/75" : "text-mist"
@@ -114,12 +153,12 @@ export default function Packages() {
                 </ul>
                 <div className="mt-8">
                   <Button
-                    href="#contact"
+                    href={model.href}
                     variant={model.featured ? "inverse" : "outline"}
                     className="w-full"
                     ariaLabel={`Inquire about ${model.name}`}
                   >
-                    Inquire
+                    {model.cta}
                   </Button>
                 </div>
               </article>

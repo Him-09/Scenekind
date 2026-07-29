@@ -61,8 +61,8 @@ export default function Nav() {
         </ul>
 
         <div className="hidden md:block">
-          <Button href="/contact" size="md">
-            Book a Creative Call
+          <Button href="/contact?intent=starter-sprint" size="md">
+            Start $497 Sprint
           </Button>
         </div>
 
@@ -103,8 +103,12 @@ export default function Nav() {
                 </li>
               ))}
               <li className="pt-3">
-                <Button href="/contact" className="w-full" size="md">
-                  Book a Creative Call
+                <Button
+                  href="/contact?intent=starter-sprint"
+                  className="w-full"
+                  size="md"
+                >
+                  Start $497 Sprint
                 </Button>
               </li>
             </ul>

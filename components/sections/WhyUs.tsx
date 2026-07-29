@@ -12,8 +12,8 @@ import Reveal from "@/components/ui/Reveal";
 const benefits = [
   {
     icon: Timer,
-    title: "Faster than traditional production",
-    body: "Production cycles measured in days, not months — without cutting the strategy or the craft.",
+    title: "First ad sprint in 5 days",
+    body: "Starter Sprint gives you one directed product ad or creator-style demo in five business days, with strategy and craft still included.",
   },
   {
     icon: MapPinOff,

@@ -9,14 +9,14 @@ import { contactEmail, ogImage, siteName } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Tell Scenekind what you're launching, selling, or testing. Book a creative call or request a quote, and we reply with a concept direction, scope, and timeline within two business days.",
+    "Start the $497 Scenekind Starter Sprint, request a free Creative Teardown, or scope a larger AI-first product ad campaign.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: `Contact | ${siteName}`,
     description:
-      "Book a creative call with Scenekind for AI commercials, product ads, motion design, and creator-style video.",
+      "Start the $497 Starter Sprint or request a free Creative Teardown from Scenekind.",
     url: "/contact",
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     title: `Contact | ${siteName}`,
     description:
-      "Book a creative call with Scenekind for AI commercials, product ads, motion design, and creator-style video.",
+      "Start the $497 Starter Sprint or request a free Creative Teardown from Scenekind.",
     images: [ogImage],
   },
 };
@@ -38,18 +38,18 @@ export const metadata: Metadata = {
 const expectations = [
   {
     step: "01",
-    title: "We read your brief",
-    body: "A sentence or two about your product and goal is all we need to start.",
+    title: "Pick your entry point",
+    body: "Start the $497 sprint, ask for a free teardown, or scope a larger build.",
   },
   {
     step: "02",
-    title: "We reply within two business days",
-    body: "With a concept direction, a scope, and a timeline — not a generic pitch deck.",
+    title: "We reply with next steps",
+    body: "You get a clear recommendation, timeline, and what we need from you.",
   },
   {
     step: "03",
-    title: "We get on a 20-minute call",
-    body: "Free, no obligation. If we're not the right fit, we'll say so.",
+    title: "Call only if it helps",
+    body: "The sprint can start async. For bigger builds, we can schedule a short call.",
   },
 ];
 
@@ -69,15 +69,15 @@ export default function ContactPage() {
                   aria-hidden="true"
                   className="h-1.5 w-1.5 rounded-full bg-ink"
                 />
-                Free 20-min creative call
+                Start small or get a teardown
               </p>
               <h1 className="font-display text-display-lg font-medium text-ink">
-                Tell us what you&apos;re building.
+                Start the sprint or get a free teardown.
               </h1>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">
-                Launching a product, refreshing a campaign, or scaling a
-                testing calendar — share the outline and we&apos;ll come back with
-                a concept direction, scope, and timeline.
+                Choose the $497 Starter Sprint when you want a finished ad, or
+                ask for a Creative Teardown when you want a quick read on what
+                your current creative should test next.
               </p>
 
               <ol className="mt-12 space-y-8 border-t border-line pt-10">

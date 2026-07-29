@@ -13,12 +13,12 @@ export default function Work() {
   const closeModal = useCallback(() => setSelected(null), []);
 
   return (
-    <section id="work" aria-label="Example work" className="rule py-24 md:py-32">
+    <section id="work" aria-label="Selected work" className="rule py-24 md:py-32">
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
           eyebrow="Work"
-          title="Example work across the formats we produce."
-          intro="A sample of what we build for brands — hero films, product spotlights, demo ads, and creator-style video. Open any card for the full breakdown."
+          title="Selected work across the formats we produce."
+          intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
         />
         <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
