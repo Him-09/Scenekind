@@ -13,14 +13,14 @@ export default function Work() {
   const closeModal = useCallback(() => setSelected(null), []);
 
   return (
-    <section id="work" aria-label="Selected work" className="rule py-24 md:py-32">
+    <section id="work" aria-label="Selected work" className="rule py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
           eyebrow="Work"
           title="Selected work across the formats we produce."
           intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
         />
-        <div className="mt-14 grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, i) => (
             <Reveal key={project.title} delay={(i % 3) * 0.08} className="h-full">
               <article className="group flex h-full flex-col">
@@ -44,7 +44,7 @@ export default function Work() {
                   </span>
                 </button>
                 <div className="flex flex-1 flex-col pt-5">
-                  <div className="flex items-baseline justify-between gap-4">
+                  <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                     <h3 className="font-display text-xl font-medium text-ink">
                       <button
                         type="button"

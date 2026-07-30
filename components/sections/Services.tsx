@@ -68,18 +68,18 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" aria-label="Services" className="rule py-24 md:py-32">
+    <section id="services" aria-label="Services" className="rule py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
           eyebrow="Services"
           title="Four ways we produce for you."
           intro="Every engagement is directed like a commercial project — strategy first, then craft. The pipeline is AI-first; the standards aren't any different."
         />
-        <div className="mt-14 space-y-5">
+        <div className="mt-12 space-y-5">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 0.06}>
               <article
-                className={`group relative grid gap-8 rounded-tile border p-8 transition-all duration-500 ease-studio md:grid-cols-[80px_1.1fr_1fr] md:p-12 ${
+                className={`group relative grid gap-7 rounded-tile border p-6 transition-all duration-500 ease-studio sm:p-8 md:p-10 xl:grid-cols-[64px_minmax(0,1.05fr)_minmax(0,1fr)] xl:gap-8 xl:p-12 ${
                   service.flagship
                     ? "border-[#171716] bg-[#171716] text-[#F2F0EA]"
                     : "border-line bg-cream-card hover:border-ink/30"
@@ -93,14 +93,14 @@ export default function Services() {
                   {service.number}
                 </span>
 
-                <div>
+                <div className="min-w-0">
                   {service.flagship && (
                     <span className="mb-4 inline-flex rounded-full border border-[#F2F0EA]/25 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-[#F2F0EA]/80">
                       Flagship
                     </span>
                   )}
                   <h3
-                    className={`font-display text-3xl font-medium md:text-4xl ${
+                    className={`font-display text-[2rem] font-medium leading-[1.08] tracking-normal sm:text-3xl md:text-4xl ${
                       service.flagship ? "text-[#F2F0EA]" : "text-ink"
                     }`}
                   >
@@ -122,7 +122,7 @@ export default function Services() {
                   </p>
                 </div>
 
-                <div className="flex flex-col justify-between gap-6">
+                <div className="min-w-0 flex flex-col justify-between gap-6">
                   <dl
                     className={`space-y-3 text-sm ${
                       service.flagship ? "text-[#F2F0EA]/80" : "text-ink/80"
@@ -136,7 +136,7 @@ export default function Services() {
                       >
                         Best for
                       </dt>
-                      <dd>{service.bestFor}</dd>
+                      <dd className="min-w-0">{service.bestFor}</dd>
                     </div>
                     <div className="flex gap-3">
                       <dt
@@ -146,7 +146,7 @@ export default function Services() {
                       >
                         Output
                       </dt>
-                      <dd>{service.output}</dd>
+                      <dd className="min-w-0">{service.output}</dd>
                     </div>
                   </dl>
                   <ul className="flex flex-wrap gap-2">

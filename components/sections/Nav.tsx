@@ -41,13 +41,13 @@ export default function Nav() {
       >
         <Link
           href="/"
-          className="font-display text-xl font-semibold tracking-tight text-ink"
+          className="font-display text-xl font-semibold tracking-normal text-ink"
           aria-label="Scenekind — back to top"
         >
           Scenekind<span className="text-mist">®</span>
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-8 lg:flex">
           {links.map((link) => (
             <li key={link.href}>
               <Link
@@ -60,7 +60,7 @@ export default function Nav() {
           ))}
         </ul>
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <Button href="/contact?intent=teardown" size="md">
             Get Free Teardown
           </Button>
@@ -68,7 +68,7 @@ export default function Nav() {
 
         <button
           type="button"
-          className="md:hidden"
+          className="lg:hidden"
           aria-expanded={open}
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
@@ -88,7 +88,7 @@ export default function Nav() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-b border-line bg-cream/95 backdrop-blur-md md:hidden"
+            className="overflow-hidden border-b border-line bg-cream/95 backdrop-blur-md lg:hidden"
           >
             <ul className="space-y-1 px-6 py-4">
               {links.map((link) => (

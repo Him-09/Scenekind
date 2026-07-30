@@ -6,7 +6,7 @@ import { services, timelines } from "@/lib/contact-options";
 import { contactEmail } from "@/lib/site";
 
 const inputClasses =
-  "w-full rounded-2xl border border-line bg-cream-card px-5 py-4 text-sm text-ink placeholder:text-mist/70 transition-colors duration-300 focus:border-ink focus:outline-none";
+  "w-full min-w-0 rounded-2xl border border-line bg-cream-card px-5 py-4 text-sm text-ink placeholder:text-mist/70 transition-colors duration-300 focus:border-ink focus:outline-none";
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -249,7 +249,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSending}
-        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#171716] px-8 py-4 text-base font-medium tracking-tight text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
+        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#171716] px-8 py-4 text-base font-medium tracking-normal text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38] disabled:cursor-not-allowed disabled:opacity-65 sm:w-auto"
       >
         {isSending ? "Sending..." : "Send inquiry"}
         <ArrowUpRight

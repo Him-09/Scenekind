@@ -92,7 +92,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reduced ? 0.1 : 0.25 }}
-          className="fixed inset-0 z-[80] flex items-center justify-center p-4 md:p-8"
+          className="fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="work-modal-title"
@@ -115,21 +115,21 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: reduced ? 0 : 24, scale: reduced ? 1 : 0.98 }}
             transition={{ duration: reduced ? 0.1 : 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-[28px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)]"
+            className="relative max-h-[calc(100dvh-1.5rem)] w-full max-w-5xl overflow-y-auto rounded-[22px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)] sm:max-h-[90vh] md:rounded-[28px]"
           >
             <button
               ref={closeRef}
               type="button"
               onClick={onClose}
               aria-label="Close"
-              className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#DDD9CF] bg-[#FBFAF7] text-[#171716] transition-all duration-300 ease-studio hover:border-[#171716] hover:bg-[#171716] hover:text-[#F2F0EA]"
+              className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full border border-[#DDD9CF] bg-[#FBFAF7] text-[#171716] transition-all duration-300 ease-studio hover:border-[#171716] hover:bg-[#171716] hover:text-[#F2F0EA] sm:right-5 sm:top-5"
             >
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
 
-            <div className="grid gap-8 p-6 md:grid-cols-[minmax(0,320px)_1fr] md:gap-12 md:p-10 lg:p-12">
+            <div className="grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-12 lg:p-10 xl:p-12">
               {/* Video — 9:16 */}
-              <div className="mx-auto w-full max-w-[320px] md:mx-0">
+              <div className="mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0">
                 <VideoTile
                   src={project.src}
                   label={project.title}
@@ -144,7 +144,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                 </span>
                 <h3
                   id="work-modal-title"
-                  className="mt-4 font-display text-3xl font-medium text-ink md:text-4xl"
+                  className="mt-4 font-display text-2xl font-medium leading-[1.08] tracking-normal text-ink sm:text-3xl lg:text-4xl"
                 >
                   {project.title}
                 </h3>

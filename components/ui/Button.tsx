@@ -31,7 +31,7 @@ export default function Button({
       href={href}
       aria-label={ariaLabel}
       className={cn(
-        "group inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-tight transition-all duration-300 ease-studio",
+        "group inline-flex max-w-full items-center justify-center gap-2 rounded-full text-center font-medium leading-tight tracking-normal transition-all duration-300 ease-studio",
         size === "md" && "px-6 py-3 text-sm",
         size === "lg" && "px-8 py-4 text-base",
         variant === "primary" &&

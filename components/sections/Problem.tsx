@@ -27,13 +27,13 @@ const pains = [
 
 export default function Problem() {
   return (
-    <section id="problem" aria-label="The problem" className="rule py-24 md:py-32">
+    <section id="problem" aria-label="The problem" className="rule py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
           eyebrow="The Problem"
           title="Traditional production wasn't built for the speed brands need now."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {pains.map((pain, i) => (
             <Reveal key={pain.title} delay={i * 0.08} className="h-full">
               <article className="flex h-full flex-col gap-4 rounded-tile border border-line bg-cream-card p-8 transition-all duration-500 ease-studio hover:-translate-y-1 hover:shadow-[0_16px_40px_-24px_rgba(23,23,22,0.25)]">

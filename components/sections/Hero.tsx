@@ -58,7 +58,7 @@ export default function Hero() {
       ref={sectionRef}
       id="top"
       aria-label="Introduction"
-      className="relative overflow-hidden pb-12 pt-24 md:pb-16 md:pt-40"
+      className="relative overflow-hidden pb-12 pt-24 md:pb-16 md:pt-32 lg:pt-40"
     >
       <div
         data-hero-content
@@ -74,22 +74,22 @@ export default function Hero() {
 
         <motion.h1
           {...fadeUp(!!reduced, 0.15)}
-          className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] text-ink md:max-w-5xl md:text-display-xl"
+          className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-5xl lg:text-[5.4rem] xl:text-[6.5rem]"
         >
           Scroll-stopping product ads, live in 5 days.
         </motion.h1>
 
         <motion.div
           {...fadeUp(!!reduced, 0.28)}
-          className="-mx-6 mt-8 md:hidden"
+          className="-mx-6 mt-8 lg:hidden"
         >
           <HeroCarousel items={reel} compact />
         </motion.div>
 
-        <div className="mt-8 flex flex-col gap-8 md:mt-10 md:flex-row md:items-end md:justify-between md:gap-10">
+        <div className="mt-8 flex flex-col gap-8 md:mt-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <motion.p
             {...fadeUp(!!reduced, 0.3)}
-            className="max-w-[21rem] text-base leading-relaxed text-mist md:max-w-xl md:text-lg"
+            className="max-w-[21rem] text-base leading-relaxed text-mist sm:max-w-[34rem] md:max-w-xl md:text-lg"
           >
             Get a polished product ad, creator-style demo, or launch film
             without hiring a crew, sourcing creators, or waiting through a
@@ -100,13 +100,19 @@ export default function Hero() {
             {...fadeUp(!!reduced, 0.4)}
             className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <Button href="/contact?intent=teardown" size="lg" withArrow>
+            <Button
+              href="/contact?intent=teardown"
+              size="lg"
+              className="w-full sm:w-auto"
+              withArrow
+            >
               Get a Free Teardown
             </Button>
             <Button
               href="/contact?intent=starter-sprint"
               size="lg"
               variant="outline"
+              className="w-full sm:w-auto"
             >
               Start the $295 Sprint
             </Button>
@@ -115,7 +121,7 @@ export default function Hero() {
       </div>
 
       {/* Media carousel */}
-      <motion.div {...fadeUp(!!reduced, 0.55)} className="mt-16 hidden md:block">
+      <motion.div {...fadeUp(!!reduced, 0.55)} className="mt-16 hidden lg:block">
         <HeroCarousel items={reel} />
       </motion.div>
 

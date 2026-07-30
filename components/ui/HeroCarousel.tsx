@@ -83,7 +83,7 @@ export default function HeroCarousel({
         }
         className={cn(
           "scrollbar-none flex overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
-          compact ? "gap-3 px-6" : "gap-5 px-6 lg:px-10"
+          compact ? "gap-3 px-6" : "gap-4 px-6 lg:gap-5 lg:px-10"
         )}
       >
         {[...items, ...items].map((item, i) => (
@@ -93,8 +93,8 @@ export default function HeroCarousel({
             className={cn(
               "relative shrink-0",
               compact
-                ? "w-[164px] sm:w-[200px]"
-                : "w-[220px] md:w-[260px] 2xl:w-[320px]"
+                ? "w-[156px] sm:w-[190px] md:w-[220px]"
+                : "w-[220px] lg:w-[260px] xl:w-[300px] 2xl:w-[320px]"
             )}
           >
             <VideoTile
@@ -105,7 +105,7 @@ export default function HeroCarousel({
             {/* Caption overlay, orchid-style: bottom gradient + text */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 bottom-0 rounded-b-tile bg-gradient-to-t from-black/55 via-black/20 to-transparent p-5 pt-12"
+              className="pointer-events-none absolute inset-x-0 bottom-0 rounded-b-tile bg-gradient-to-t from-black/55 via-black/20 to-transparent p-4 pt-10 sm:p-5 sm:pt-12"
             >
               <p className="text-sm font-medium text-white">{item.label}</p>
               <p className="mt-0.5 text-xs text-white/70">{item.caption}</p>

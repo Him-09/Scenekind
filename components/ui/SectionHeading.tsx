@@ -36,7 +36,7 @@ export default function SectionHeading({
         />
         {eyebrow}
       </p>
-      <h2 className="font-display text-display-lg font-medium text-ink">
+      <h2 className="font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
         {title}
       </h2>
       {intro && (

@@ -39,7 +39,7 @@ export default function Solution() {
     <section
       id="solution"
       aria-label="Our approach"
-      className="rule py-24 md:py-32"
+      className="rule py-20 md:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
@@ -47,7 +47,7 @@ export default function Solution() {
           title="We compress the path from idea to finished asset."
           intro="Scenekind replaces the heaviest parts of production — sourcing, shooting, logistics — with an AI-first pipeline, while keeping the parts that make work great: strategy, direction, and craft. The result is commercial-grade creative on a timeline built for modern campaigns."
         />
-        <ol className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <ol className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
           {steps.map((item, i) => (
             <Reveal key={item.step} delay={i * 0.07}>
               <li className="group border-t border-line pt-6 transition-colors duration-500 hover:border-ink/40">

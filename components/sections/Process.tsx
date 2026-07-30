@@ -72,11 +72,11 @@ export default function Process() {
       ref={sectionRef}
       id="process"
       aria-label="Process"
-      className="rule py-24 md:py-32"
+      className="rule py-20 md:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
-          <div className="lg:sticky lg:top-32 lg:self-start">
+        <div className="grid gap-12 xl:grid-cols-[1fr_1.2fr] xl:gap-20">
+          <div className="xl:sticky xl:top-32 xl:self-start">
             <SectionHeading
               eyebrow="Process"
               title="A faster production workflow, built for modern campaigns."

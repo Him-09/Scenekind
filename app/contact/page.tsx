@@ -57,12 +57,12 @@ export default function ContactPage() {
   return (
     <>
       <Nav />
-      <main className="pt-32 md:pt-40">
+      <main className="pt-28 md:pt-32 lg:pt-40">
         <section
           aria-label="Contact"
-          className="mx-auto max-w-wrap px-6 pb-24 lg:px-10"
+          className="mx-auto max-w-wrap px-6 pb-20 md:pb-24 lg:px-10"
         >
-          <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-24">
+          <div className="grid gap-14 xl:grid-cols-[1fr_1.1fr] xl:gap-24">
             <Reveal>
               <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist">
                 <span
@@ -71,10 +71,10 @@ export default function ContactPage() {
                 />
                 Start small or get a teardown
               </p>
-              <h1 className="font-display text-display-lg font-medium text-ink">
+              <h1 className="font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
                 Get a free teardown or start the sprint.
               </h1>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">
+              <p className="mt-6 max-w-md text-base leading-relaxed text-mist md:text-lg">
                 Ask for a Creative Teardown first when you want a quick read on
                 what to test next. Choose the $295 Starter Sprint when there is
                 already an angle worth making.
@@ -102,7 +102,7 @@ export default function ContactPage() {
                 <p className="text-sm text-mist">Direct line</p>
                 <Link
                   href={`mailto:${contactEmail}`}
-                  className="mt-1 inline-block font-display text-xl font-medium text-ink underline-offset-4 hover:underline"
+                  className="mt-1 inline-block break-all font-display text-xl font-medium text-ink underline-offset-4 hover:underline"
                 >
                   {contactEmail}
                 </Link>
@@ -110,7 +110,7 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <div className="rounded-tile border border-line bg-cream-card p-8 md:p-10">
+              <div className="rounded-tile border border-line bg-cream-card p-5 sm:p-8 md:p-10">
                 <ContactForm />
               </div>
             </Reveal>

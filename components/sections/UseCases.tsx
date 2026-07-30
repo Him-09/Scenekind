@@ -22,16 +22,16 @@ const useCases = [
 
 export default function UseCases() {
   return (
-    <section id="use-cases" aria-label="Who we work with" className="rule py-24 md:py-32">
+    <section id="use-cases" aria-label="Who we work with" className="rule py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
           eyebrow="Who It's For"
           title="Production that fits how your team ships."
         />
-        <ul className="mt-14 divide-y divide-line border-y border-line">
+        <ul className="mt-12 divide-y divide-line border-y border-line">
           {useCases.map((useCase, i) => (
             <Reveal key={useCase.client} delay={i * 0.06}>
-              <li className="group grid gap-2 py-8 md:grid-cols-[220px_1fr] md:gap-10">
+              <li className="group grid gap-2 py-7 lg:grid-cols-[220px_1fr] lg:gap-10">
                 <h3 className="font-display text-2xl font-medium text-ink transition-transform duration-300 ease-studio group-hover:translate-x-1">
                   {useCase.client}
                 </h3>

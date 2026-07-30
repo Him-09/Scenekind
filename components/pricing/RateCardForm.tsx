@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 
 const inputClasses =
-  "min-h-14 w-full rounded-full border border-[#F2F0EA]/15 bg-[#F2F0EA]/8 px-5 text-sm text-[#F2F0EA] placeholder:text-[#F2F0EA]/35 transition-colors duration-300 focus:border-[#F2F0EA] focus:outline-none";
+  "min-h-14 w-full min-w-0 rounded-full border border-[#F2F0EA]/15 bg-[#F2F0EA]/8 px-5 text-sm text-[#F2F0EA] placeholder:text-[#F2F0EA]/35 transition-colors duration-300 focus:border-[#F2F0EA] focus:outline-none";
 
 export default function RateCardForm() {
   const [email, setEmail] = useState("");
@@ -77,11 +77,11 @@ export default function RateCardForm() {
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#F2F0EA]/42">
         Full PDF rate card
       </p>
-      <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_auto]">
+      <div className="mt-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_auto]">
         <label htmlFor="rate-card-email" className="sr-only">
           Email address
         </label>
-        <div>
+        <div className="min-w-0">
           <input
             id="rate-card-email"
             type="email"
@@ -96,7 +96,7 @@ export default function RateCardForm() {
         <button
           type="submit"
           disabled={isSending}
-          className="group inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[#F2F0EA] px-6 text-sm font-medium tracking-tight text-[#171716] transition-all duration-300 ease-studio hover:bg-[#E8E5DD] disabled:cursor-not-allowed disabled:opacity-65"
+          className="group inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-[#F2F0EA] px-6 text-sm font-medium tracking-normal text-[#171716] transition-all duration-300 ease-studio hover:bg-[#E8E5DD] disabled:cursor-not-allowed disabled:opacity-65 md:w-auto"
         >
           {isSending
             ? "Sending..."

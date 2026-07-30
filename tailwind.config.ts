@@ -27,16 +27,16 @@ const config: Config = {
       },
       fontSize: {
         "display-xl": [
-          "clamp(2.9rem, 7.5vw, 6.5rem)",
-          { lineHeight: "1.0", letterSpacing: "-0.04em" },
+          "6.5rem",
+          { lineHeight: "1.0", letterSpacing: "0" },
         ],
         "display-lg": [
-          "clamp(2.2rem, 4.5vw, 4rem)",
-          { lineHeight: "1.05", letterSpacing: "-0.03em" },
+          "4rem",
+          { lineHeight: "1.05", letterSpacing: "0" },
         ],
         "display-md": [
-          "clamp(1.7rem, 3vw, 2.6rem)",
-          { lineHeight: "1.1", letterSpacing: "-0.02em" },
+          "2.6rem",
+          { lineHeight: "1.1", letterSpacing: "0" },
         ],
       },
       maxWidth: {

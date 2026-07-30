@@ -24,7 +24,7 @@ export default function Packages() {
     <section
       id="engagements"
       aria-label="Packages and pricing"
-      className="rule bg-[#171716] py-24 text-[#F2F0EA] md:py-32"
+      className="rule bg-[#171716] py-20 text-[#F2F0EA] md:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <Reveal>
@@ -35,7 +35,7 @@ export default function Packages() {
             />
             Packages
           </p>
-          <h2 className="max-w-3xl font-display text-display-lg font-medium">
+          <h2 className="max-w-3xl font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
             The sprint is the audition after the free teardown.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#F2F0EA]/60 md:text-lg">
@@ -45,8 +45,8 @@ export default function Packages() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <article className="mt-12 rounded-tile border border-[#F2F0EA]/18 bg-[#262623] p-6 md:p-8">
-            <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
+          <article className="mt-12 rounded-tile border border-[#F2F0EA]/18 bg-[#262623] p-5 sm:p-6 md:p-8">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-start">
               <div>
                 <span className="inline-flex rounded-full bg-[#F2F0EA]/10 px-3 py-1 text-xs font-medium text-[#F2F0EA]/75">
                   Six slots a month - one per brand
@@ -63,8 +63,8 @@ export default function Packages() {
                 </p>
               </div>
 
-              <div className="md:text-right">
-                <p className="font-display text-5xl font-medium">$295</p>
+              <div className="lg:text-right">
+                <p className="font-display text-4xl font-medium tracking-normal sm:text-5xl">$295</p>
                 <p className="mt-1 text-sm text-[#F2F0EA]/45">
                   invoiced on delivery
                 </p>
@@ -80,11 +80,11 @@ export default function Packages() {
         </Reveal>
 
         <Reveal delay={0.16}>
-          <div className="mt-8 px-3 md:px-5">
+          <div className="mt-8 md:px-5">
             <p className="text-sm font-medium text-[#F2F0EA]/42">
               And after the sprint
             </p>
-            <div className="mt-4 grid gap-8 sm:grid-cols-3">
+            <div className="mt-4 grid gap-7 md:grid-cols-3">
               {nextPackages.map((item) => (
                 <div key={item.name}>
                   <h3 className="text-base font-semibold">{item.name}</h3>

@@ -44,13 +44,13 @@ const benefits = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" aria-label="Why Scenekind" className="rule py-24 md:py-32">
+    <section id="why-us" aria-label="Why Scenekind" className="rule py-20 md:py-24 lg:py-32">
       <div className="mx-auto max-w-wrap px-6 lg:px-10">
         <SectionHeading
           eyebrow="Why Scenekind"
           title="Built for brands that need quality and speed."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {benefits.map((benefit, i) => (
             <Reveal key={benefit.title} delay={(i % 3) * 0.08} className="h-full">
               <article className="group h-full rounded-tile border border-line bg-cream-card p-8 transition-all duration-500 ease-studio hover:-translate-y-1 hover:shadow-[0_16px_40px_-24px_rgba(23,23,22,0.25)]">

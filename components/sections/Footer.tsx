@@ -16,7 +16,7 @@ export default function Footer() {
       <div className="mx-auto max-w-wrap px-6 py-16 lg:px-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <p className="font-display text-2xl font-semibold tracking-tight text-ink">
+            <p className="font-display text-2xl font-semibold tracking-normal text-ink">
               Scenekind<span className="text-mist">®</span>
             </p>
             <p className="mt-3 text-sm leading-relaxed text-mist">
