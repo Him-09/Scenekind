@@ -47,14 +47,14 @@ export default function ContactForm() {
     }
 
     if (intent === "campaign-build") {
-      setService("Campaign Build ($4,900)");
+      setService("Campaign Build ($4,800)");
       setMessage(
         "I want to scope a Campaign Build. Here is what we are launching:"
       );
     }
 
     if (intent === "flagship-film") {
-      setService("Flagship Film ($5,900)");
+      setService("Flagship Film ($6,000)");
       setMessage(
         "I want to plan a Flagship Film. Here is the brand or product story:"
       );

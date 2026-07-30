@@ -1,17 +1,21 @@
+import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 
 const nextPackages = [
   {
     name: "Launch Pack",
     price: "$2,400",
+    scope: "15s commercial + 3 product ads + logo animation, 10 days.",
   },
   {
     name: "Campaign Build",
-    price: "$4,900",
+    price: "$4,800",
+    scope: "30s hero film + 6 product ads + 2 creator-style ads, 15 days.",
   },
   {
     name: "Flagship Film",
-    price: "$5,900",
+    price: "$6,000",
+    scope: "60s flagship film + motion explainer + 4 product ads, 20 days.",
   },
 ];
 
@@ -41,10 +45,10 @@ export default function Packages() {
         </Reveal>
 
         <Reveal delay={0.08}>
-          <article className="mt-12 rounded-tile border border-[#0A5CC7] bg-[#262623] p-6 shadow-[0_0_0_1px_rgba(10,92,199,0.18)] md:p-8">
+          <article className="mt-12 rounded-tile border border-[#F2F0EA]/18 bg-[#262623] p-6 md:p-8">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-start">
               <div>
-                <span className="inline-flex rounded-full bg-[#06356F] px-3 py-1 text-xs font-medium text-[#8EBCFF]">
+                <span className="inline-flex rounded-full bg-[#F2F0EA]/10 px-3 py-1 text-xs font-medium text-[#F2F0EA]/75">
                   Six slots a month - one per brand
                 </span>
                 <h3 className="mt-4 font-display text-2xl font-medium">
@@ -87,9 +91,21 @@ export default function Packages() {
                   <p className="mt-2 font-display text-2xl font-medium">
                     {item.price}
                   </p>
+                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#F2F0EA]/55">
+                    {item.scope}
+                  </p>
                 </div>
               ))}
             </div>
+            <Button
+              href="/pricing"
+              variant="inverse"
+              size="lg"
+              className="mt-10"
+              withArrow
+            >
+              Download the full rate card
+            </Button>
           </div>
         </Reveal>
       </div>
