@@ -92,7 +92,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reduced ? 0.1 : 0.25 }}
-          className="fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-8"
+          className="fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 lg:p-6 xl:p-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="work-modal-title"
@@ -115,7 +115,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: reduced ? 0 : 24, scale: reduced ? 1 : 0.98 }}
             transition={{ duration: reduced ? 0.1 : 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-h-[calc(100dvh-1.5rem)] w-full max-w-5xl overflow-y-auto rounded-[22px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)] sm:max-h-[90vh] md:rounded-[28px]"
+            className="relative max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-[22px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)] sm:max-h-[90vh] lg:max-h-[calc(100dvh-3rem)] md:rounded-[28px]"
           >
             <button
               ref={closeRef}
@@ -127,9 +127,9 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
 
-            <div className="grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,320px)_1fr] lg:gap-12 lg:p-10 xl:p-12">
+            <div className="grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:p-8 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-12 xl:p-10">
               {/* Video — 9:16 */}
-              <div className="mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0">
+              <div className="mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0 lg:max-w-[280px] xl:max-w-[320px]">
                 <VideoTile
                   src={project.src}
                   label={project.title}
@@ -144,27 +144,27 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                 </span>
                 <h3
                   id="work-modal-title"
-                  className="mt-4 font-display text-2xl font-medium leading-[1.08] tracking-normal text-ink sm:text-3xl lg:text-4xl"
+                  className="mt-4 font-display text-2xl font-medium leading-[1.08] tracking-normal text-ink sm:text-3xl xl:text-4xl"
                 >
                   {project.title}
                 </h3>
                 <p
                   id="work-modal-description"
-                  className="mt-4 text-sm leading-relaxed text-mist md:text-base"
+                  className="mt-4 text-sm leading-relaxed text-mist xl:text-base"
                 >
                   {project.details.overview}
                 </p>
 
-                <div className="mt-8 space-y-8">
+                <div className="mt-7 grid gap-7 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-6">
                   <div>
                     <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
                       Approach
                     </h4>
-                    <ul className="mt-3 space-y-2.5">
+                    <ul className="mt-3 space-y-2">
                       {project.details.approach.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 text-sm text-ink/85"
+                          className="flex items-start gap-3 text-sm leading-relaxed text-ink/85 lg:gap-2.5"
                         >
                           <span
                             aria-hidden="true"
@@ -180,11 +180,11 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                     <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
                       Deliverables
                     </h4>
-                    <ul className="mt-3 space-y-2.5">
+                    <ul className="mt-3 space-y-2">
                       {project.details.deliverables.map((item) => (
                         <li
                           key={item}
-                          className="flex items-start gap-3 text-sm text-ink/85"
+                          className="flex items-start gap-3 text-sm leading-relaxed text-ink/85 lg:gap-2.5"
                         >
                           <span
                             aria-hidden="true"
@@ -211,19 +211,19 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                       ))}
                     </div>
                   </div>
-                </div>
 
-                <div className="mt-10 border-t border-[#DDD9CF] pt-6">
-                  <Link
-                    href="/contact"
-                    className="group inline-flex items-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
-                  >
-                    Want something like this?
-                    <ArrowUpRight
-                      className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                      aria-hidden="true"
-                    />
-                  </Link>
+                  <div className="border-t border-[#DDD9CF] pt-6 lg:flex lg:items-end lg:border-t-0 lg:pt-0">
+                    <Link
+                      href="/contact"
+                      className="group inline-flex items-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
+                    >
+                      Want something like this?
+                      <ArrowUpRight
+                        className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
