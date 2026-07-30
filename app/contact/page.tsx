@@ -9,14 +9,14 @@ import { contactEmail, ogImage, siteName } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start the $295 Scenekind Starter Sprint, request a free Creative Teardown, or scope a larger fixed-price AI-first product ad package.",
+    "Request a free Scenekind Creative Teardown, start the $295 Starter Sprint, or scope a larger fixed-price AI-first product ad package.",
   alternates: {
     canonical: "/contact",
   },
   openGraph: {
     title: `Contact | ${siteName}`,
     description:
-      "Start the $295 Starter Sprint or request a free Creative Teardown from Scenekind.",
+      "Request a free Creative Teardown or start the $295 Starter Sprint with Scenekind.",
     url: "/contact",
     images: [
       {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     title: `Contact | ${siteName}`,
     description:
-      "Start the $295 Starter Sprint or request a free Creative Teardown from Scenekind.",
+      "Request a free Creative Teardown or start the $295 Starter Sprint with Scenekind.",
     images: [ogImage],
   },
 };
@@ -39,7 +39,7 @@ const expectations = [
   {
     step: "01",
     title: "Pick your entry point",
-    body: "Start the $295 sprint, ask for a free teardown, or choose a fixed-price package.",
+    body: "Ask for a free teardown, start the $295 sprint, or choose a fixed-price package.",
   },
   {
     step: "02",
@@ -72,12 +72,12 @@ export default function ContactPage() {
                 Start small or get a teardown
               </p>
               <h1 className="font-display text-display-lg font-medium text-ink">
-                Start the sprint or get a free teardown.
+                Get a free teardown or start the sprint.
               </h1>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-mist">
-                Choose the $295 Starter Sprint when you want finished ads, or
-                ask for a Creative Teardown when you want a quick read on what
-                your current creative should test next.
+                Ask for a Creative Teardown first when you want a quick read on
+                what to test next. Choose the $295 Starter Sprint when there is
+                already an angle worth making.
               </p>
 
               <ol className="mt-12 space-y-8 border-t border-line pt-10">

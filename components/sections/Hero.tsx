@@ -69,7 +69,7 @@ export default function Hero() {
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist md:mb-8"
         >
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
-          5-day ad sprint for product brands
+          Free creative teardown for product brands
         </motion.p>
 
         <motion.h1
@@ -100,34 +100,14 @@ export default function Hero() {
             {...fadeUp(!!reduced, 0.4)}
             className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <Button href="/contact?intent=starter-sprint" size="lg" withArrow>
-              Start the $295 Sprint
-            </Button>
-            <Button href="/contact?intent=teardown" size="lg" variant="outline">
+            <Button href="/contact?intent=teardown" size="lg" withArrow>
               Get a Free Teardown
+            </Button>
+            <Button href="/#engagements" size="lg" variant="outline">
+              See Packages
             </Button>
           </motion.div>
         </div>
-
-        <motion.div
-          {...fadeUp(!!reduced, 0.48)}
-          className="mt-8 grid max-w-3xl grid-cols-3 border-y border-line py-5 md:mt-12"
-        >
-          {[
-            ["3", "brands in pilot"],
-            ["40+", "assets produced"],
-            ["5 days", "sprint turnaround"],
-          ].map(([value, label]) => (
-            <div key={label} className="pr-4">
-              <p className="font-display text-2xl font-medium text-ink md:text-3xl">
-                {value}
-              </p>
-              <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-mist">
-                {label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
       </div>
 
       {/* Media carousel */}
@@ -139,8 +119,8 @@ export default function Hero() {
         {...fadeUp(!!reduced, 0.7)}
         className="mx-auto mt-10 max-w-wrap px-6 text-sm text-mist lg:px-10"
       >
-        Fixed-scope sprint, campaign builds, and ongoing creative batches for
-        brands that need quality video without agency drag.
+        Start with a free teardown. Move into the sprint only when there is a
+        clear angle worth making.
       </motion.p>
     </section>
   );

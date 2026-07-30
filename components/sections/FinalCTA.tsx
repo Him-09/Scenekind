@@ -16,24 +16,23 @@ export default function FinalCTA() {
                 aria-hidden="true"
                 className="h-1.5 w-1.5 rounded-full bg-[#F2F0EA]"
               />
-              Fixed-price Starter Sprint
+              Free Creative Teardown
             </p>
             <h2 className="mx-auto max-w-3xl font-display text-display-lg font-medium">
-              Put one scroll-stopping product ad in market this week.
+              See what your next ad should test before you buy anything.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#F2F0EA]/65 md:text-lg">
-              Start with the $295 sprint: three hooks on one product, three
-              ready-to-run ads, all four ratios, one revision round, and
-              delivery in five business days.
+              Send your best current ad, product page, or launch context. We
+              send back a written Creative Teardown with three untested angles.
             </p>
             <div className="mt-10 flex justify-center">
               <Button
-                href="/contact?intent=starter-sprint"
+                href="/contact?intent=teardown"
                 size="lg"
                 variant="inverse"
                 withArrow
               >
-                Start the $295 Sprint
+                Get a Free Teardown
               </Button>
             </div>
             <p className="mt-10 text-xs uppercase tracking-[0.22em] text-[#F2F0EA]/40">

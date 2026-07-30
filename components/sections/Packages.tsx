@@ -32,11 +32,11 @@ export default function Packages() {
             Packages
           </p>
           <h2 className="max-w-3xl font-display text-display-lg font-medium">
-            Start with the sprint. Scale only if the work earns it.
+            The sprint is the audition after the free teardown.
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#F2F0EA]/60 md:text-lg">
-            A simple entry point, then fixed-price packages when you want the
-            full launch system.
+            The teardown is the opener. If the angle is worth making, the
+            Starter Sprint turns it into three ready-to-run ads.
           </p>
         </Reveal>
 

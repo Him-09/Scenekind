@@ -61,8 +61,8 @@ export default function Nav() {
         </ul>
 
         <div className="hidden md:block">
-          <Button href="/contact?intent=starter-sprint" size="md">
-            Start $295 Sprint
+          <Button href="/contact?intent=teardown" size="md">
+            Get Free Teardown
           </Button>
         </div>
 
@@ -104,11 +104,11 @@ export default function Nav() {
               ))}
               <li className="pt-3">
                 <Button
-                  href="/contact?intent=starter-sprint"
+                  href="/contact?intent=teardown"
                   className="w-full"
                   size="md"
                 >
-                  Start $295 Sprint
+                  Get Free Teardown
                 </Button>
               </li>
             </ul>
