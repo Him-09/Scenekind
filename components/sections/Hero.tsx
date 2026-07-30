@@ -103,8 +103,12 @@ export default function Hero() {
             <Button href="/contact?intent=teardown" size="lg" withArrow>
               Get a Free Teardown
             </Button>
-            <Button href="/#engagements" size="lg" variant="outline">
-              See Packages
+            <Button
+              href="/contact?intent=starter-sprint"
+              size="lg"
+              variant="outline"
+            >
+              Start the $295 Sprint
             </Button>
           </motion.div>
         </div>

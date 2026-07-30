@@ -1,4 +1,4 @@
-import Button from "@/components/ui/Button";
+import RateCardForm from "@/components/pricing/RateCardForm";
 import Reveal from "@/components/ui/Reveal";
 
 const nextPackages = [
@@ -97,15 +97,7 @@ export default function Packages() {
                 </div>
               ))}
             </div>
-            <Button
-              href="/pricing"
-              variant="inverse"
-              size="lg"
-              className="mt-10"
-              withArrow
-            >
-              Download the full rate card
-            </Button>
+            <RateCardForm />
           </div>
         </Reveal>
       </div>

@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
     ["Email", email],
     ["Name", name || "Not provided"],
     ["Company / brand", company || "Not provided"],
-    ["Source", "/pricing"],
+    ["Source", "Home packages section"],
   ];
 
   const htmlRows = rows

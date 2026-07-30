@@ -10,7 +10,7 @@ const filePath = path.join(process.cwd(), "private", fileName);
 
 export async function GET(request: NextRequest) {
   if (request.cookies.get(cookieName)?.value !== "granted") {
-    return NextResponse.redirect(new URL("/pricing?download=locked", request.url));
+    return NextResponse.redirect(new URL("/#engagements", request.url));
   }
 
   const file = await readFile(filePath);
