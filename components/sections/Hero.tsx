@@ -76,7 +76,7 @@ export default function Hero() {
           {...fadeUp(!!reduced, 0.15)}
           className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-5xl lg:text-[5.4rem] xl:text-[6.5rem]"
         >
-          Scroll-stopping product ads, live in 5 days.
+          Scroll-stopping product ads, live in 48 hours.
         </motion.h1>
 
         <motion.div

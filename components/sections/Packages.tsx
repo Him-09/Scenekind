@@ -1,24 +1,6 @@
 import RateCardForm from "@/components/pricing/RateCardForm";
 import Reveal from "@/components/ui/Reveal";
 
-const nextPackages = [
-  {
-    name: "Launch Pack",
-    price: "$2,400",
-    scope: "15s commercial + 3 product ads + logo animation, 10 days.",
-  },
-  {
-    name: "Campaign Build",
-    price: "$4,800",
-    scope: "30s hero film + 6 product ads + 2 creator-style ads, 15 days.",
-  },
-  {
-    name: "Flagship Film",
-    price: "$6,000",
-    scope: "60s flagship film + motion explainer + 4 product ads, 20 days.",
-  },
-];
-
 export default function Packages() {
   return (
     <section
@@ -80,25 +62,7 @@ export default function Packages() {
         </Reveal>
 
         <Reveal delay={0.16}>
-          <div className="mt-8 md:px-5">
-            <p className="text-sm font-medium text-[#F2F0EA]/42">
-              And after the sprint
-            </p>
-            <div className="mt-4 grid gap-7 md:grid-cols-3">
-              {nextPackages.map((item) => (
-                <div key={item.name}>
-                  <h3 className="text-base font-semibold">{item.name}</h3>
-                  <p className="mt-2 font-display text-2xl font-medium">
-                    {item.price}
-                  </p>
-                  <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#F2F0EA]/55">
-                    {item.scope}
-                  </p>
-                </div>
-              ))}
-            </div>
-            <RateCardForm />
-          </div>
+          <RateCardForm />
         </Reveal>
       </div>
     </section>
