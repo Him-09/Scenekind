@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const inputClasses =
   "min-h-14 w-full min-w-0 rounded-full border border-[#F2F0EA]/15 bg-[#F2F0EA]/8 px-5 text-sm text-[#F2F0EA] placeholder:text-[#F2F0EA]/35 transition-colors duration-300 focus:border-[#F2F0EA] focus:outline-none";
@@ -20,6 +21,10 @@ export default function RateCardForm() {
     setError("");
 
     try {
+      trackEvent("rate_card_requested", {
+        location: "packages",
+      });
+
       const response = await fetch("/api/rate-card-lead", {
         method: "POST",
         headers: {
@@ -42,9 +47,13 @@ export default function RateCardForm() {
 
       const nextDownloadUrl = data.downloadUrl ?? "/api/rate-card-download";
       setStatus("sent");
+      trackEvent("rate_card_downloaded", {
+        location: "packages",
+        download_url_present: Boolean(data.downloadUrl),
+      });
       window.setTimeout(() => {
         window.location.assign(nextDownloadUrl);
-      }, 150);
+      }, 300);
     } catch (err) {
       setStatus("error");
       setError(

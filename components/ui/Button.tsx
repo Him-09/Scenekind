@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/cn";
 import type { ReactNode } from "react";
+import type { AnalyticsProperties } from "@/lib/analytics";
 
 type ButtonProps = {
   href: string;
@@ -11,6 +12,8 @@ type ButtonProps = {
   withArrow?: boolean;
   className?: string;
   ariaLabel?: string;
+  analyticsEvent?: string;
+  analyticsProperties?: AnalyticsProperties;
 };
 
 /**
@@ -25,11 +28,17 @@ export default function Button({
   withArrow = false,
   className,
   ariaLabel,
+  analyticsEvent,
+  analyticsProperties,
 }: ButtonProps) {
   return (
     <Link
       href={href}
       aria-label={ariaLabel}
+      data-mixpanel-event={analyticsEvent}
+      data-mixpanel-properties={
+        analyticsProperties ? JSON.stringify(analyticsProperties) : undefined
+      }
       className={cn(
         "group inline-flex max-w-full items-center justify-center gap-2 rounded-full text-center font-medium leading-tight tracking-normal transition-all duration-300 ease-studio",
         size === "md" && "px-6 py-3 text-sm",

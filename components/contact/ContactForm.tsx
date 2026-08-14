@@ -3,6 +3,7 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { services, timelines } from "@/lib/contact-options";
+import { trackEvent } from "@/lib/analytics";
 import { contactEmail } from "@/lib/site";
 
 const inputClasses =
@@ -97,6 +98,14 @@ export default function ContactForm() {
       if (!response.ok) {
         throw new Error(data.error ?? "Could not send inquiry.");
       }
+
+      const intent = new URLSearchParams(window.location.search).get("intent");
+      trackEvent("contact_inquiry_sent", {
+        service,
+        timeline,
+        intent,
+        has_company: Boolean(company.trim()),
+      });
 
       setName("");
       setEmail("");

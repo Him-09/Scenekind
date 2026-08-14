@@ -61,7 +61,15 @@ export default function Nav() {
         </ul>
 
         <div className="hidden lg:block">
-          <Button href="/contact?intent=teardown" size="md">
+          <Button
+            href="/contact?intent=teardown"
+            size="md"
+            analyticsEvent="cta_clicked"
+            analyticsProperties={{
+              cta: "free_teardown",
+              location: "nav",
+            }}
+          >
             Get Free Teardown
           </Button>
         </div>
@@ -107,6 +115,11 @@ export default function Nav() {
                   href="/contact?intent=teardown"
                   className="w-full"
                   size="md"
+                  analyticsEvent="cta_clicked"
+                  analyticsProperties={{
+                    cta: "free_teardown",
+                    location: "mobile_nav",
+                  }}
                 >
                   Get Free Teardown
                 </Button>

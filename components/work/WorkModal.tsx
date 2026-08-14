@@ -215,6 +215,13 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                   <div className="border-t border-[#DDD9CF] pt-6 lg:flex lg:items-end lg:border-t-0 lg:pt-0">
                     <Link
                       href="/contact"
+                      data-mixpanel-event="cta_clicked"
+                      data-mixpanel-properties={JSON.stringify({
+                        cta: "contact_from_case_study",
+                        location: "work_case_study_modal",
+                        project_title: project.title,
+                        project_type: project.type,
+                      })}
                       className="group inline-flex items-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
                     >
                       Want something like this?

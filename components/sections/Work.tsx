@@ -6,11 +6,20 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Reveal from "@/components/ui/Reveal";
 import VideoTile from "@/components/ui/VideoTile";
 import WorkModal from "@/components/work/WorkModal";
+import { trackEvent } from "@/lib/analytics";
 import { projects, type Project } from "@/lib/projects";
 
 export default function Work() {
   const [selected, setSelected] = useState<Project | null>(null);
   const closeModal = useCallback(() => setSelected(null), []);
+  const openProject = useCallback((project: Project, source: string) => {
+    trackEvent("work_case_study_opened", {
+      project_title: project.title,
+      project_type: project.type,
+      source,
+    });
+    setSelected(project);
+  }, []);
 
   return (
     <section id="work" aria-label="Selected work" className="rule py-20 md:py-24 lg:py-32">
@@ -26,7 +35,7 @@ export default function Work() {
               <article className="group flex h-full flex-col">
                 <button
                   type="button"
-                  onClick={() => setSelected(project)}
+                  onClick={() => openProject(project, "media_card")}
                   aria-label={`View details: ${project.title}`}
                   className="relative block w-full text-left"
                 >
@@ -48,7 +57,7 @@ export default function Work() {
                     <h3 className="font-display text-xl font-medium text-ink">
                       <button
                         type="button"
-                        onClick={() => setSelected(project)}
+                        onClick={() => openProject(project, "title")}
                         className="text-left transition-colors duration-300 hover:text-mist"
                       >
                         {project.title}

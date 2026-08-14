@@ -30,6 +30,11 @@ export default function FinalCTA() {
                 href="/contact?intent=teardown"
                 size="lg"
                 variant="inverse"
+                analyticsEvent="cta_clicked"
+                analyticsProperties={{
+                  cta: "free_teardown",
+                  location: "final_cta",
+                }}
                 withArrow
               >
                 Get a Free Teardown

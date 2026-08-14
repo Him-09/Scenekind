@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Inter } from "next/font/google";
+import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import {
   ogImage,
@@ -78,6 +79,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <body className="grain">
+        <AnalyticsProvider />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

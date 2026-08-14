@@ -173,6 +173,11 @@ export default function Services() {
             href="/contact?intent=teardown"
             variant="outline"
             size="lg"
+            analyticsEvent="cta_clicked"
+            analyticsProperties={{
+              cta: "free_teardown",
+              location: "services",
+            }}
             withArrow
           >
             Get a Free Creative Teardown

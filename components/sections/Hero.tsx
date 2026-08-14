@@ -104,6 +104,11 @@ export default function Hero() {
               href="/contact?intent=teardown"
               size="lg"
               className="w-full sm:w-auto"
+              analyticsEvent="cta_clicked"
+              analyticsProperties={{
+                cta: "free_teardown",
+                location: "hero",
+              }}
               withArrow
             >
               Get a Free Teardown
@@ -113,6 +118,11 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="w-full sm:w-auto"
+              analyticsEvent="cta_clicked"
+              analyticsProperties={{
+                cta: "starter_sprint",
+                location: "hero",
+              }}
             >
               Start the $295 Sprint
             </Button>
