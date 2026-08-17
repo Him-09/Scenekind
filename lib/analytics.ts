@@ -11,6 +11,8 @@ type MixpanelWithPageView = typeof mixpanel & {
 const mixpanelToken =
   process.env.NEXT_PUBLIC_MIXPANEL_TOKEN ??
   "b2b7c0cf5b0b348d217c884f03c28168";
+const mixpanelApiHost =
+  process.env.NEXT_PUBLIC_MIXPANEL_API_HOST ?? "https://api-eu.mixpanel.com";
 const mixpanelWithPageView = mixpanel as MixpanelWithPageView;
 
 let initialized = false;
@@ -40,6 +42,7 @@ export function initAnalytics() {
 
   mixpanel.init(mixpanelToken, {
     autocapture: false,
+    api_host: mixpanelApiHost,
     debug: process.env.NODE_ENV !== "production",
     persistence: "localStorage",
     track_pageview: false,
