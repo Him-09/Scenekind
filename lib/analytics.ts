@@ -4,10 +4,14 @@ import mixpanel from "mixpanel-browser/src/loaders/loader-module-core";
 
 type AnalyticsValue = string | number | boolean | null | undefined;
 export type AnalyticsProperties = Record<string, AnalyticsValue>;
+type MixpanelWithPageView = typeof mixpanel & {
+  track_pageview: (properties?: AnalyticsProperties) => void;
+};
 
 const mixpanelToken =
   process.env.NEXT_PUBLIC_MIXPANEL_TOKEN ??
   "b2b7c0cf5b0b348d217c884f03c28168";
+const mixpanelWithPageView = mixpanel as MixpanelWithPageView;
 
 let initialized = false;
 
@@ -61,11 +65,16 @@ export function trackEvent(
 
 export function trackPageView(pathname: string, searchParams: URLSearchParams) {
   const path = `${pathname}${searchParams.toString() ? `?${searchParams}` : ""}`;
-
-  trackEvent("page_viewed", {
+  const properties = cleanProperties({
     path,
     page_title: document.title,
     referrer: document.referrer,
     ...getUtmProperties(searchParams),
   });
+
+  initAnalytics();
+  if (!initialized) return;
+
+  mixpanelWithPageView.track_pageview(properties);
+  mixpanel.track("page_viewed", properties);
 }
