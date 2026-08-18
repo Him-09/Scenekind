@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import HeroCarousel, { type CarouselItem } from "@/components/ui/HeroCarousel";
+import { projects } from "@/lib/projects";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -19,13 +20,11 @@ const fadeUp = (reduced: boolean, delay: number) => ({
  * Hero media reel. Files live in /public/videos; missing files show
  * labeled placeholder tiles until the real videos are added.
  */
-const reel: CarouselItem[] = [
-  { src: "/videos/beauty-hero-film.mp4", label: "Lip Tint Hero Film", caption: "AI Commercial" },
-  { src: "/videos/creator-testimonial-batch.mp4", label: "Creator-Style Refill Demo", caption: "Creator-Style Video" },
-  { src: "/videos/fitness-wearable-launch.mp4", label: "Fitness Wearable Launch", caption: "AI Commercial" },
-  { src: "/videos/skincare-paid-social.mp4", label: "Skincare Application Demo", caption: "Product Ads" },
-  { src: "/videos/skincare-product-spotlight.mp4", label: "Skincare Product Spotlight", caption: "Product Ads" },
-];
+const reel: CarouselItem[] = projects.map(({ src, title, type }) => ({
+  src,
+  label: title,
+  caption: type,
+}));
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -76,7 +75,7 @@ export default function Hero() {
           {...fadeUp(!!reduced, 0.15)}
           className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-5xl lg:text-[5.4rem] xl:text-[6.5rem]"
         >
-          Scroll-stopping product ads, live in 48 hours.
+          Cinematic product films, built to move fast.
         </motion.h1>
 
         <motion.div

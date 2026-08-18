@@ -155,25 +155,65 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                   {project.details.overview}
                 </p>
 
-                <div className="mt-7 grid gap-7 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-6">
+                <div className="mt-7 grid gap-5 border-y border-[#DDD9CF] py-6 sm:grid-cols-2">
+                  <div>
+                    <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-mist">
+                      Built for
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/85">
+                      {project.details.builtFor}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-mist">
+                      Runtime
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-ink/85">
+                      {project.details.runtime}
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl bg-[#F2F0EA] p-4 sm:col-span-2">
+                    <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-mist">
+                      The hook
+                    </h4>
+                    <p className="mt-2 font-display text-lg leading-snug text-ink sm:text-xl">
+                      “{project.details.hook}”
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-7 grid gap-7 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-7">
                   <div>
                     <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
-                      Approach
+                      Visual direction
                     </h4>
-                    <ul className="mt-3 space-y-2">
-                      {project.details.approach.map((item) => (
+                    <p className="mt-3 text-sm leading-relaxed text-ink/85">
+                      {project.details.direction}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
+                      Sequence
+                    </h4>
+                    <ol className="mt-3 space-y-2">
+                      {project.details.sequence.map((item, index) => (
                         <li
                           key={item}
                           className="flex items-start gap-3 text-sm leading-relaxed text-ink/85 lg:gap-2.5"
                         >
                           <span
                             aria-hidden="true"
-                            className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-[#171716]"
-                          />
+                            className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-[#DDD9CF] text-[10px] text-mist"
+                          >
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
                           {item}
                         </li>
                       ))}
-                    </ul>
+                    </ol>
                   </div>
 
                   <div>
@@ -197,10 +237,23 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                   </div>
 
                   <div>
-                    <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
-                      Formats
-                    </h4>
-                    <div className="mt-3 flex flex-wrap gap-2">
+                    <div>
+                      <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
+                        Sound
+                      </h4>
+                      <p className="mt-3 text-sm leading-relaxed text-ink/85">
+                        {project.details.sound}
+                      </p>
+                    </div>
+                    <div className="mt-5">
+                      <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
+                        On-screen type
+                      </h4>
+                      <p className="mt-3 text-sm leading-relaxed text-ink/85">
+                        {project.details.onScreenType}
+                      </p>
+                    </div>
+                    <div className="mt-5 flex flex-wrap gap-2">
                       {project.details.formats.map((format) => (
                         <span
                           key={format}
@@ -212,7 +265,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                     </div>
                   </div>
 
-                  <div className="border-t border-[#DDD9CF] pt-6 lg:flex lg:items-end lg:border-t-0 lg:pt-0">
+                  <div className="border-t border-[#DDD9CF] pt-6 lg:col-span-2 lg:flex lg:justify-end">
                     <Link
                       href="/contact"
                       data-mixpanel-event="CTA Clicked"
