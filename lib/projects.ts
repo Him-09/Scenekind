@@ -25,34 +25,34 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
-    type: "AI Commercial",
-    title: "Lip Tint Hero Film",
+    type: "Product Ad",
+    title: "Le Mieux Bio Cell Cream",
     description:
-      "A cinematic beauty launch built around golden-hour intrigue, marble product staging, gloss macros, and a clean branded payoff.",
-    deliverables: "15s hero film · type system · 3 social ratios",
-    src: "/videos/beauty-hero-film.mp4",
+      "A polished skincare spotlight built from frosted-glass staging, cream texture, molecular imagery, and a precise product reveal.",
+    deliverables: "15s product film · texture macro · science sequence",
+    src: "/videos/skincare-product-spotlight.mp4",
     details: {
       overview:
-        "A fifteen-second product story that moves from atmosphere to proof: warm light catches the hand, the tint arrives on marble, shimmer and lip macros show the finish, and a final portrait lands the beauty payoff.",
-      builtFor: "Beauty launches, paid social, and feed-first product storytelling.",
-      hook: "Golden-hour intrigue becomes glossy product proof in fifteen seconds.",
+        "A silver-toned product film that moves from shelf appeal to texture and science. The jar emerges through frosted glass, cream and suspended droplets create the sensory middle, and a molecular network leads into the final lid-lift reveal.",
+      builtFor: "Premium skincare launches, paid social, and product-page storytelling.",
+      hook: "Clinical skincare made tactile through glass, cream, and molecular motion.",
       direction:
-        "Warm, tactile, and editorial. Sheer curtains and pale marble keep the frame premium while gold highlights and tight gloss details give the tint its signature.",
+        "Clinical, luminous, and precise. Frost white, polished silver, and soft gray keep the palette aligned to the packaging while fluid highlights stop the product from feeling sterile.",
       sequence: [
-        "Golden-hour hand and silhouette open the film.",
-        "The roll-on tint is revealed against pale marble.",
-        "Shimmer texture and glossy-lip macros prove the finish.",
-        "A beauty portrait and branded end card close the arc.",
+        "The jar appears through a frosted-glass cylinder.",
+        "A label push-in establishes the Bio Cell Rejuvenating Cream.",
+        "Cream texture, droplets, and molecular motion carry the efficacy story.",
+        "The lid lifts cleanly before the Le Mieux end card.",
       ],
       deliverables: [
-        "15s hero film",
-        "Reusable on-screen type system",
-        "Product and beauty stills pulled from frame",
+        "15s product spotlight",
+        "Texture and molecular-science sequences",
+        "Hero product reveal and branded end card",
       ],
-      formats: ["9:16", "4:5", "1:1"],
+      formats: ["9:16"],
       runtime: "15 seconds",
-      sound: "Music-led edit with restrained product accents.",
-      onScreenType: "Five short copy beats in a serif-led brand voice.",
+      sound: "Music-led with restrained glass, liquid, and reveal accents.",
+      onScreenType: "The packaging carries the detail; the final card resolves to Le Mieux.",
     },
   },
   {

@@ -6,7 +6,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import HeroCarousel, { type CarouselItem } from "@/components/ui/HeroCarousel";
-import { projects } from "@/lib/projects";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -20,11 +19,43 @@ const fadeUp = (reduced: boolean, delay: number) => ({
  * Hero media reel. Files live in /public/videos; missing files show
  * labeled placeholder tiles until the real videos are added.
  */
-const reel: CarouselItem[] = projects.map(({ src, title, type }) => ({
-  src,
-  label: title,
-  caption: type,
-}));
+const reel: CarouselItem[] = [
+  {
+    src: "/videos/skincare-product-spotlight.mp4",
+    label: "Le Mieux Bio Cell Cream",
+    caption: "Product Ad",
+  },
+  {
+    src: "/videos/absolutejoi-night-oil.mp4",
+    label: "AbsoluteJOI Night Oil",
+    caption: "AI Commercial",
+  },
+  {
+    src: "/videos/glassfx-duo-hydrafx.mp4",
+    label: "GLASSFX DUO-HYDRAfx",
+    caption: "AI Commercial",
+  },
+  {
+    src: "/videos/creator-testimonial-batch.mp4",
+    label: "Creator-Style Refill Demo",
+    caption: "Creator-Style Video",
+  },
+  {
+    src: "/videos/fitness-wearable-launch.mp4",
+    label: "Fitness Wearable Launch",
+    caption: "AI Commercial",
+  },
+  {
+    src: "/videos/skincare-paid-social.mp4",
+    label: "Skincare Application Demo",
+    caption: "Product Ad",
+  },
+  {
+    src: "/videos/beauty-hero-film.mp4",
+    label: "Lip Tint Hero Film",
+    caption: "AI Commercial",
+  },
+];
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
