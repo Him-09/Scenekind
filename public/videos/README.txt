@@ -1,6 +1,5 @@
 Portfolio videos (web-optimized H.264, muted, faststart):
 
-  beauty-hero-film.mp4            <- lip tint commercial (golden light, marble, gloss macros)
   fitness-wearable-launch.mp4     <- fitness band spin + exploded-view assembly
   skincare-product-spotlight.mp4  <- Le Mieux cream spotlight (texture and molecular sequence)
   skincare-paid-social.mp4        <- cream application demo (model, scoop, cheek apply)

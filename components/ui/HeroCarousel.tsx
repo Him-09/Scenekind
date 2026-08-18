@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useRef } from "react";
 import VideoTile from "@/components/ui/VideoTile";
 import { cn } from "@/lib/cn";
 
@@ -19,8 +18,7 @@ type HeroCarouselProps = {
 
 /**
  * A finite carousel that renders every project exactly once. Touch and trackpad
- * scrolling use snap points; the arrow controls wrap between the first and last
- * real cards without cloning any items.
+ * scrolling use snap points without cloning items or adding desktop controls.
  */
 export default function HeroCarousel({
   items,
@@ -28,37 +26,6 @@ export default function HeroCarousel({
   compact = false,
 }: HeroCarouselProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const [reduced, setReduced] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduced(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
-
-  const scrollByTile = (direction: 1 | -1) => {
-    const track = trackRef.current;
-    if (!track || items.length < 2) return;
-
-    const firstTile = track.querySelector<HTMLElement>("[data-carousel-tile]");
-    const styles = window.getComputedStyle(track);
-    const gap = Number.parseFloat(styles.columnGap) || 0;
-    const distance = (firstTile?.offsetWidth ?? 320) + gap;
-    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
-    const atStart = track.scrollLeft <= 1;
-    const atEnd = track.scrollLeft >= maxScroll - 1;
-
-    let left = track.scrollLeft + direction * distance;
-    if (direction === 1 && atEnd) left = 0;
-    if (direction === -1 && atStart) left = maxScroll;
-
-    track.scrollTo({
-      left,
-      behavior: reduced ? "auto" : "smooth",
-    });
-  };
 
   if (items.length === 0) return null;
 
@@ -98,32 +65,6 @@ export default function HeroCarousel({
             </div>
           </div>
         ))}
-      </div>
-
-      <div
-        className={cn(
-          "mt-6 justify-end gap-3 px-6 lg:px-10",
-          compact ? "hidden" : "flex"
-        )}
-      >
-        <button
-          type="button"
-          onClick={() => scrollByTile(-1)}
-          aria-label="Previous work"
-          disabled={items.length < 2}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-[#DDD9CF] bg-[#FBFAF7] text-[#171716] transition-all duration-300 ease-studio hover:border-[#171716] hover:bg-[#171716] hover:text-[#F2F0EA] disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-        </button>
-        <button
-          type="button"
-          onClick={() => scrollByTile(1)}
-          aria-label="Next work"
-          disabled={items.length < 2}
-          className="flex h-11 w-11 items-center justify-center rounded-full border border-[#DDD9CF] bg-[#FBFAF7] text-[#171716] transition-all duration-300 ease-studio hover:border-[#171716] hover:bg-[#171716] hover:text-[#F2F0EA] disabled:cursor-not-allowed disabled:opacity-40"
-        >
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
-        </button>
       </div>
     </div>
   );

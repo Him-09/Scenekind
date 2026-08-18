@@ -50,11 +50,6 @@ const reel: CarouselItem[] = [
     label: "Skincare Application Demo",
     caption: "Product Ad",
   },
-  {
-    src: "/videos/beauty-hero-film.mp4",
-    label: "Lip Tint Hero Film",
-    caption: "AI Commercial",
-  },
 ];
 
 export default function Hero() {

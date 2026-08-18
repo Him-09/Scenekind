@@ -32,25 +32,25 @@ export default function Work() {
           {projects.map((project, i) => (
             <Reveal key={project.title} delay={(i % 3) * 0.08} className="h-full">
               <article className="group flex h-full flex-col">
-                <button
-                  type="button"
-                  onClick={() => openProject(project)}
-                  aria-label={`View details: ${project.title}`}
-                  className="relative block w-full text-left"
-                >
+                <div className="relative w-full">
                   <VideoTile
                     src={project.src}
                     label={project.title}
                     className="aspect-[9/16]"
                   />
-                  {/* Hover affordance */}
+                  <button
+                    type="button"
+                    onClick={() => openProject(project)}
+                    aria-label={`View details: ${project.title}`}
+                    className="absolute inset-0 z-10 rounded-tile focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+                  />
                   <span
                     aria-hidden="true"
-                    className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#F2F0EA]/90 text-[#171716] opacity-0 backdrop-blur-sm transition-all duration-300 ease-studio group-hover:opacity-100"
+                    className="pointer-events-none absolute bottom-4 right-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-[#F2F0EA]/90 text-[#171716] opacity-0 backdrop-blur-sm transition-all duration-300 ease-studio group-hover:opacity-100"
                   >
                     <Plus className="h-4 w-4" />
                   </span>
-                </button>
+                </div>
                 <div className="flex flex-1 flex-col pt-5">
                   <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                     <h3 className="font-display text-xl font-medium text-ink">
