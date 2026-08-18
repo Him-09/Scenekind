@@ -1,6 +1,6 @@
 "use client";
 
-import mixpanel from "mixpanel-browser/src/loaders/loader-module-core";
+import mixpanel from "mixpanel-browser";
 
 type AnalyticsValue = string | number | boolean | null | undefined;
 export type AnalyticsProperties = Record<string, AnalyticsValue>;
@@ -45,6 +45,8 @@ export function initAnalytics() {
     api_host: mixpanelApiHost,
     debug: process.env.NODE_ENV !== "production",
     persistence: "localStorage",
+    record_mask_all_inputs: true,
+    record_sessions_percent: 100,
     track_pageview: false,
   });
 
