@@ -79,5 +79,4 @@ export function trackPageView(pathname: string, searchParams: URLSearchParams) {
   if (!initialized) return;
 
   mixpanelWithPageView.track_pageview(properties);
-  mixpanel.track("page_viewed", properties);
 }
