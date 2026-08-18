@@ -104,10 +104,12 @@ export default function Hero() {
               href="/contact?intent=teardown"
               size="lg"
               className="w-full sm:w-auto"
-              analyticsEvent="cta_clicked"
+              analyticsEvent="CTA Clicked"
               analyticsProperties={{
-                cta: "free_teardown",
-                location: "hero",
+                cta_name: "Free Teardown",
+                cta_location: "Hero",
+                cta_intent: "teardown",
+                destination: "/contact",
               }}
               withArrow
             >
@@ -118,10 +120,12 @@ export default function Hero() {
               size="lg"
               variant="outline"
               className="w-full sm:w-auto"
-              analyticsEvent="cta_clicked"
+              analyticsEvent="CTA Clicked"
               analyticsProperties={{
-                cta: "starter_sprint",
-                location: "hero",
+                cta_name: "Starter Sprint",
+                cta_location: "Hero",
+                cta_intent: "starter-sprint",
+                destination: "/contact",
               }}
             >
               Start the $295 Sprint

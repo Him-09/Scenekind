@@ -19,10 +19,6 @@ function parseAnalyticsProperties(value: string | undefined) {
   }
 }
 
-function getClickLabel(element: HTMLElement) {
-  return element.textContent?.replace(/\s+/g, " ").trim().slice(0, 120);
-}
-
 function AnalyticsEvents() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -51,16 +47,8 @@ function AnalyticsEvents() {
       const properties = parseAnalyticsProperties(
         trackedElement.dataset.mixpanelProperties
       );
-      const href =
-        trackedElement instanceof HTMLAnchorElement
-          ? trackedElement.href
-          : trackedElement.getAttribute("href") ?? undefined;
 
-      trackEvent(eventName, {
-        ...properties,
-        href,
-        label: getClickLabel(trackedElement),
-      });
+      trackEvent(eventName, properties);
     };
 
     document.addEventListener("click", onClick);

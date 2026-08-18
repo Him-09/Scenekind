@@ -43,6 +43,10 @@ export default function Footer() {
           <div>
             <Link
               href={`mailto:${contactEmail}`}
+              data-mixpanel-event="Email Clicked"
+              data-mixpanel-properties={JSON.stringify({
+                location: "Footer",
+              })}
               className="text-sm font-medium text-ink underline-offset-4 transition-colors duration-300 hover:underline"
             >
               {contactEmail}

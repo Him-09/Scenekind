@@ -12,11 +12,10 @@ import { projects, type Project } from "@/lib/projects";
 export default function Work() {
   const [selected, setSelected] = useState<Project | null>(null);
   const closeModal = useCallback(() => setSelected(null), []);
-  const openProject = useCallback((project: Project, source: string) => {
-    trackEvent("work_case_study_opened", {
-      project_title: project.title,
-      project_type: project.type,
-      source,
+  const openProject = useCallback((project: Project) => {
+    trackEvent("Work Opened", {
+      work_name: project.title,
+      work_category: project.type,
     });
     setSelected(project);
   }, []);
@@ -35,7 +34,7 @@ export default function Work() {
               <article className="group flex h-full flex-col">
                 <button
                   type="button"
-                  onClick={() => openProject(project, "media_card")}
+                  onClick={() => openProject(project)}
                   aria-label={`View details: ${project.title}`}
                   className="relative block w-full text-left"
                 >
@@ -57,7 +56,7 @@ export default function Work() {
                     <h3 className="font-display text-xl font-medium text-ink">
                       <button
                         type="button"
-                        onClick={() => openProject(project, "title")}
+                        onClick={() => openProject(project)}
                         className="text-left transition-colors duration-300 hover:text-mist"
                       >
                         {project.title}

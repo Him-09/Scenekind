@@ -102,6 +102,10 @@ export default function ContactPage() {
                 <p className="text-sm text-mist">Direct line</p>
                 <Link
                   href={`mailto:${contactEmail}`}
+                  data-mixpanel-event="Email Clicked"
+                  data-mixpanel-properties={JSON.stringify({
+                    location: "Contact",
+                  })}
                   className="mt-1 inline-block break-all font-display text-xl font-medium text-ink underline-offset-4 hover:underline"
                 >
                   {contactEmail}

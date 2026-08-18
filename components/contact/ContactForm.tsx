@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useEffect, useRef, useState, type FormEvent } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { services, timelines } from "@/lib/contact-options";
 import { trackEvent } from "@/lib/analytics";
@@ -10,6 +10,7 @@ const inputClasses =
   "w-full min-w-0 rounded-2xl border border-line bg-cream-card px-5 py-4 text-sm text-ink placeholder:text-mist/70 transition-colors duration-300 focus:border-ink focus:outline-none";
 
 export default function ContactForm() {
+  const inquiryStartedRef = useRef(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [company, setCompany] = useState("");
@@ -21,6 +22,17 @@ export default function ContactForm() {
     "idle"
   );
   const [error, setError] = useState("");
+
+  const getIntent = () =>
+    new URLSearchParams(window.location.search).get("intent") ?? "general";
+
+  const trackInquiryStarted = () => {
+    if (inquiryStartedRef.current) return;
+    inquiryStartedRef.current = true;
+    trackEvent("Inquiry Started", {
+      intent: getIntent(),
+    });
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -99,12 +111,8 @@ export default function ContactForm() {
         throw new Error(data.error ?? "Could not send inquiry.");
       }
 
-      const intent = new URLSearchParams(window.location.search).get("intent");
-      trackEvent("contact_inquiry_sent", {
-        service,
-        timeline,
-        intent,
-        has_company: Boolean(company.trim()),
+      trackEvent("Inquiry Submitted", {
+        intent: getIntent(),
       });
 
       setName("");
@@ -128,7 +136,12 @@ export default function ContactForm() {
   const isSending = status === "sending";
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
+    <form
+      onSubmit={handleSubmit}
+      onChange={trackInquiryStarted}
+      onFocusCapture={trackInquiryStarted}
+      className="space-y-5"
+    >
       <div className="hidden" aria-hidden="true">
         <label htmlFor="contact-website">Website</label>
         <input

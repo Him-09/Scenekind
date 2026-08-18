@@ -21,10 +21,6 @@ export default function RateCardForm() {
     setError("");
 
     try {
-      trackEvent("rate_card_requested", {
-        location: "packages",
-      });
-
       const response = await fetch("/api/rate-card-lead", {
         method: "POST",
         headers: {
@@ -47,9 +43,8 @@ export default function RateCardForm() {
 
       const nextDownloadUrl = data.downloadUrl ?? "/api/rate-card-download";
       setStatus("sent");
-      trackEvent("rate_card_downloaded", {
-        location: "packages",
-        download_url_present: Boolean(data.downloadUrl),
+      trackEvent("Rate Card Requested", {
+        location: "Pricing",
       });
       window.setTimeout(() => {
         window.location.assign(nextDownloadUrl);

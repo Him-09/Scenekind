@@ -64,10 +64,12 @@ export default function Nav() {
           <Button
             href="/contact?intent=teardown"
             size="md"
-            analyticsEvent="cta_clicked"
+            analyticsEvent="CTA Clicked"
             analyticsProperties={{
-              cta: "free_teardown",
-              location: "nav",
+              cta_name: "Free Teardown",
+              cta_location: "Navigation",
+              cta_intent: "teardown",
+              destination: "/contact",
             }}
           >
             Get Free Teardown
@@ -115,10 +117,12 @@ export default function Nav() {
                   href="/contact?intent=teardown"
                   className="w-full"
                   size="md"
-                  analyticsEvent="cta_clicked"
+                  analyticsEvent="CTA Clicked"
                   analyticsProperties={{
-                    cta: "free_teardown",
-                    location: "mobile_nav",
+                    cta_name: "Free Teardown",
+                    cta_location: "Navigation",
+                    cta_intent: "teardown",
+                    destination: "/contact",
                   }}
                 >
                   Get Free Teardown

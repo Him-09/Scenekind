@@ -30,10 +30,12 @@ export default function FinalCTA() {
                 href="/contact?intent=teardown"
                 size="lg"
                 variant="inverse"
-                analyticsEvent="cta_clicked"
+                analyticsEvent="CTA Clicked"
                 analyticsProperties={{
-                  cta: "free_teardown",
-                  location: "final_cta",
+                  cta_name: "Free Teardown",
+                  cta_location: "Bottom CTA",
+                  cta_intent: "teardown",
+                  destination: "/contact",
                 }}
                 withArrow
               >
