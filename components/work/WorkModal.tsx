@@ -265,24 +265,48 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                     </div>
                   </div>
 
-                  <div className="border-t border-[#DDD9CF] pt-6 lg:col-span-2 lg:flex lg:justify-end">
-                    <Link
-                      href="/contact"
-                      data-mixpanel-event="CTA Clicked"
-                      data-mixpanel-properties={JSON.stringify({
-                        cta_name: "Work Inquiry",
-                        cta_location: "Work Modal",
-                        cta_intent: "case-study-inquiry",
-                        destination: "/contact",
-                      })}
-                      className="group inline-flex items-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
-                    >
-                      Want something like this?
-                      <ArrowUpRight
-                        className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                        aria-hidden="true"
-                      />
-                    </Link>
+                  <div className="border-t border-[#DDD9CF] pt-6 lg:col-span-2">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
+                      {project.specKitHref && (
+                        <Link
+                          href={project.specKitHref}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          data-mixpanel-event="CTA Clicked"
+                          data-mixpanel-properties={JSON.stringify({
+                            cta_name: "Full Spec Kit",
+                            cta_location: "Work Modal",
+                            cta_intent: "case-study-spec-kit",
+                            destination: project.specKitHref,
+                            work_name: project.title,
+                          })}
+                          className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#171716] px-6 py-3 text-sm font-medium text-[#171716] transition-all duration-300 ease-studio hover:bg-[#171716] hover:text-[#F2F0EA]"
+                        >
+                          View full spec kit
+                          <ArrowUpRight
+                            className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      )}
+                      <Link
+                        href="/contact"
+                        data-mixpanel-event="CTA Clicked"
+                        data-mixpanel-properties={JSON.stringify({
+                          cta_name: "Work Inquiry",
+                          cta_location: "Work Modal",
+                          cta_intent: "case-study-inquiry",
+                          destination: "/contact",
+                        })}
+                        className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
+                      >
+                        Want something like this?
+                        <ArrowUpRight
+                          className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

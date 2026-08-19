@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   deliverables: string;
   src: string;
+  specKitHref?: string;
   details: {
     overview: string;
     builtFor: string;
@@ -93,6 +94,7 @@ export const projects: Project[] = [
       "A bright 19-second ritual film that turns the product directions - drop, warm, pat - into a communal skincare story.",
     deliverables: "19s ritual film · 4 ratios · tactile product story",
     src: "/videos/absolutejoi-night-oil.mp4",
+    specKitHref: "/absolutejoi",
     details: {
       overview:
         "Three friends frame the ritual as shared knowledge while the oil stays at the center. The edit moves from social invitation to pipette and palm detail, luminous skin, and a final group return around the bottle.",
@@ -124,6 +126,7 @@ export const projects: Project[] = [
       "A 16-second motion-first product film built around the bi-phase formula: separate, shake, swirl, mist, and settle.",
     deliverables: "16s product film · 4 ratios · formula macro",
     src: "/videos/glassfx-duo-hydrafx.mp4",
+    specKitHref: "/glassfx",
     details: {
       overview:
         "The packaging explains the product before copy can. The film turns its two visible phases into the story, moving from bottle recognition to a marbled-gold macro, atomised mist, skin payoff, and final brand recall.",
