@@ -37,7 +37,7 @@ export default function Nav() {
     >
       <nav
         aria-label="Main"
-        className="mx-auto flex h-16 max-w-wrap items-center justify-between px-6 md:h-[72px] lg:px-10"
+        className="site-nav mx-auto flex h-16 max-w-wrap items-center justify-between px-6 md:h-[72px] lg:px-10"
       >
         <Link
           href="/"

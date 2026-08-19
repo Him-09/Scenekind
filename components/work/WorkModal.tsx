@@ -92,7 +92,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reduced ? 0.1 : 0.25 }}
-          className="fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 lg:p-6 xl:p-8"
+          className="work-modal-shell fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 lg:p-6 xl:p-8"
           role="dialog"
           aria-modal="true"
           aria-labelledby="work-modal-title"
@@ -115,7 +115,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: reduced ? 0 : 24, scale: reduced ? 1 : 0.98 }}
             transition={{ duration: reduced ? 0.1 : 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-[22px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)] sm:max-h-[90vh] lg:max-h-[calc(100dvh-3rem)] md:rounded-[28px]"
+            className="work-modal-panel relative max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-[22px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)] sm:max-h-[90vh] lg:max-h-[calc(100dvh-3rem)] md:rounded-[28px]"
           >
             <button
               ref={closeRef}
@@ -127,9 +127,9 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
 
-            <div className="grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:p-8 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-12 xl:p-10">
+            <div className="work-modal-layout grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:p-8 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-12 xl:p-10">
               {/* Video — 9:16 */}
-              <div className="mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0 lg:max-w-[280px] xl:max-w-[320px]">
+              <div className="work-modal-media mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0 lg:max-w-[280px] xl:max-w-[320px]">
                 <VideoTile
                   src={project.src}
                   label={project.title}
@@ -144,18 +144,18 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                 </span>
                 <h3
                   id="work-modal-title"
-                  className="mt-4 font-display text-2xl font-medium leading-[1.08] tracking-normal text-ink sm:text-3xl xl:text-4xl"
+                  className="work-modal-title mt-4 font-display text-2xl font-medium leading-[1.08] tracking-normal text-ink sm:text-3xl xl:text-4xl"
                 >
                   {project.title}
                 </h3>
                 <p
                   id="work-modal-description"
-                  className="mt-4 text-sm leading-relaxed text-mist xl:text-base"
+                  className="work-modal-overview mt-4 text-sm leading-relaxed text-mist xl:text-base"
                 >
                   {project.details.overview}
                 </p>
 
-                <div className="mt-7 grid gap-5 border-y border-[#DDD9CF] py-6 sm:grid-cols-2">
+                <div className="work-modal-summary mt-7 grid gap-5 border-y border-[#DDD9CF] py-6 sm:grid-cols-2">
                   <div>
                     <h4 className="text-[10px] font-medium uppercase tracking-[0.2em] text-mist">
                       Built for
@@ -184,7 +184,49 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-7 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-7">
+                <div className="work-modal-actions mt-5 flex flex-col gap-3 sm:flex-row sm:justify-end">
+                  {project.specKitHref && (
+                    <Link
+                      href={project.specKitHref}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-mixpanel-event="CTA Clicked"
+                      data-mixpanel-properties={JSON.stringify({
+                        cta_name: "Full Spec Kit",
+                        cta_location: "Work Modal",
+                        cta_intent: "case-study-spec-kit",
+                        destination: project.specKitHref,
+                        work_name: project.title,
+                      })}
+                      className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#171716] px-6 py-3 text-sm font-medium text-[#171716] transition-all duration-300 ease-studio hover:bg-[#171716] hover:text-[#F2F0EA]"
+                    >
+                      View full spec kit
+                      <ArrowUpRight
+                        className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                  )}
+                  <Link
+                    href="/contact"
+                    data-mixpanel-event="CTA Clicked"
+                    data-mixpanel-properties={JSON.stringify({
+                      cta_name: "Work Inquiry",
+                      cta_location: "Work Modal",
+                      cta_intent: "case-study-inquiry",
+                      destination: "/contact",
+                    })}
+                    className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
+                  >
+                    Want something like this?
+                    <ArrowUpRight
+                      className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                </div>
+
+                <div className="work-modal-details mt-7 grid gap-7 border-t border-[#DDD9CF] pt-7 lg:grid-cols-2 lg:gap-x-8 lg:gap-y-7">
                   <div>
                     <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-mist">
                       Visual direction
@@ -265,49 +307,6 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                     </div>
                   </div>
 
-                  <div className="border-t border-[#DDD9CF] pt-6 lg:col-span-2">
-                    <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
-                      {project.specKitHref && (
-                        <Link
-                          href={project.specKitHref}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          data-mixpanel-event="CTA Clicked"
-                          data-mixpanel-properties={JSON.stringify({
-                            cta_name: "Full Spec Kit",
-                            cta_location: "Work Modal",
-                            cta_intent: "case-study-spec-kit",
-                            destination: project.specKitHref,
-                            work_name: project.title,
-                          })}
-                          className="group inline-flex items-center justify-center gap-2 rounded-full border border-[#171716] px-6 py-3 text-sm font-medium text-[#171716] transition-all duration-300 ease-studio hover:bg-[#171716] hover:text-[#F2F0EA]"
-                        >
-                          View full spec kit
-                          <ArrowUpRight
-                            className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                            aria-hidden="true"
-                          />
-                        </Link>
-                      )}
-                      <Link
-                        href="/contact"
-                        data-mixpanel-event="CTA Clicked"
-                        data-mixpanel-properties={JSON.stringify({
-                          cta_name: "Work Inquiry",
-                          cta_location: "Work Modal",
-                          cta_intent: "case-study-inquiry",
-                          destination: "/contact",
-                        })}
-                        className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#171716] px-6 py-3 text-sm font-medium text-[#F2F0EA] transition-all duration-300 ease-studio hover:bg-[#3D3C38]"
-                      >
-                        Want something like this?
-                        <ArrowUpRight
-                          className="h-4 w-4 transition-transform duration-300 ease-studio group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

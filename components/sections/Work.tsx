@@ -28,7 +28,7 @@ export default function Work() {
           title="Selected work across the formats we produce."
           intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
         />
-        <div className="mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="work-grid mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
           {projects.map((project, i) => (
             <Reveal key={project.title} delay={(i % 3) * 0.08} className="h-full">
               <article className="group flex h-full flex-col">
@@ -36,7 +36,7 @@ export default function Work() {
                   <VideoTile
                     src={project.src}
                     label={project.title}
-                    className="aspect-[9/16]"
+                    className="work-preview aspect-[9/16]"
                   />
                   <button
                     type="button"

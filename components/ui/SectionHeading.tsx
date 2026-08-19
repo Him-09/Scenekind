@@ -26,7 +26,7 @@ export default function SectionHeading({
     >
       <p
         className={cn(
-          "mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist",
+          "section-heading-kicker mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist",
           align === "center" && "mx-auto"
         )}
       >
@@ -36,11 +36,11 @@ export default function SectionHeading({
         />
         {eyebrow}
       </p>
-      <h2 className="font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
+      <h2 className="section-heading-title font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
         {title}
       </h2>
       {intro && (
-        <p className="mt-5 text-base leading-relaxed text-mist md:text-lg">
+        <p className="section-heading-intro mt-5 text-base leading-relaxed text-mist md:text-lg">
           {intro}
         </p>
       )}

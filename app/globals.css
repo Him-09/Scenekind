@@ -78,6 +78,126 @@ summary:focus-visible {
   border-top: 1px solid #ddd9cf;
 }
 
+/* Keep wide-but-short laptop viewports from inheriting monitor-scale spacing. */
+@media (min-width: 64rem) and (max-height: 56.25rem) {
+  .site-nav {
+    height: 4rem;
+  }
+
+  section.rule {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .compact-laptop-hero {
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+  }
+
+  .compact-laptop-hero-kicker {
+    margin-bottom: 1rem;
+  }
+
+  .compact-laptop-hero-title {
+    max-width: 60rem;
+    font-size: clamp(3.75rem, 5.2vw, 4.75rem);
+  }
+
+  .compact-laptop-hero-body {
+    margin-top: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .compact-laptop-hero-carousel {
+    margin-top: 2rem;
+  }
+
+  .compact-laptop-hero-carousel [data-carousel-tile] {
+    width: clamp(11.5rem, 22dvh, 13rem);
+  }
+
+  .compact-laptop-hero-caption {
+    margin-top: 1rem;
+  }
+
+  .section-heading-kicker {
+    margin-bottom: 1rem;
+  }
+
+  .section-heading-title {
+    font-size: 3.15rem;
+  }
+
+  .section-heading-intro {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .work-grid,
+  .services-list {
+    margin-top: 2rem;
+  }
+
+  .work-grid {
+    row-gap: 2.5rem;
+  }
+
+  .work-preview {
+    aspect-ratio: 4 / 5;
+  }
+
+  .service-card {
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  .work-modal-shell {
+    padding: 1rem;
+  }
+
+  .work-modal-panel {
+    max-width: 64rem;
+    max-height: calc(100dvh - 2rem);
+  }
+
+  .work-modal-layout {
+    grid-template-columns: minmax(0, 13.5rem) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .work-modal-media {
+    max-width: 13.5rem;
+  }
+
+  .work-modal-title {
+    margin-top: 0.75rem;
+    padding-right: 3rem;
+    font-size: 1.875rem;
+  }
+
+  .work-modal-overview {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  .work-modal-summary {
+    margin-top: 1.25rem;
+    gap: 1rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .work-modal-actions,
+  .work-modal-details {
+    margin-top: 1.25rem;
+  }
+
+  .work-modal-details {
+    gap: 1.25rem;
+  }
+}
+
 /* Marquee pauses on hover (when motion is allowed) */
 .marquee-track:hover {
   animation-play-state: paused;

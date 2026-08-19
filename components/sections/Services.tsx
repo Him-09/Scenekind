@@ -75,11 +75,11 @@ export default function Services() {
           title="Four ways we produce for you."
           intro="Every engagement is directed like a commercial project — strategy first, then craft. The pipeline is AI-first; the standards aren't any different."
         />
-        <div className="mt-12 space-y-5">
+        <div className="services-list mt-12 space-y-5">
           {services.map((service, i) => (
             <Reveal key={service.title} delay={i * 0.06}>
               <article
-                className={`group relative grid gap-7 rounded-tile border p-6 transition-all duration-500 ease-studio sm:p-8 md:p-10 xl:grid-cols-[64px_minmax(0,1.05fr)_minmax(0,1fr)] xl:gap-8 xl:p-12 ${
+                className={`service-card group relative grid gap-7 rounded-tile border p-6 transition-all duration-500 ease-studio sm:p-8 md:p-10 xl:grid-cols-[64px_minmax(0,1.05fr)_minmax(0,1fr)] xl:gap-8 xl:p-12 ${
                   service.flagship
                     ? "border-[#171716] bg-[#171716] text-[#F2F0EA]"
                     : "border-line bg-cream-card hover:border-ink/30"

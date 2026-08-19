@@ -83,7 +83,7 @@ export default function Hero() {
       ref={sectionRef}
       id="top"
       aria-label="Introduction"
-      className="relative overflow-hidden pb-12 pt-24 md:pb-16 md:pt-32 lg:pt-40"
+      className="compact-laptop-hero relative overflow-hidden pb-12 pt-24 md:pb-16 md:pt-32 lg:pt-40"
     >
       <div
         data-hero-content
@@ -91,7 +91,7 @@ export default function Hero() {
       >
         <motion.p
           {...fadeUp(!!reduced, 0.05)}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist md:mb-8"
+          className="compact-laptop-hero-kicker mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-cream-card px-3.5 py-1.5 text-xs font-medium text-mist md:mb-8"
         >
           <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-ink" />
           Free creative teardown for product brands
@@ -99,7 +99,7 @@ export default function Hero() {
 
         <motion.h1
           {...fadeUp(!!reduced, 0.15)}
-          className="max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-5xl lg:text-[5.4rem] xl:text-[6.5rem]"
+          className="compact-laptop-hero-title max-w-[21rem] text-balance font-display text-[2.35rem] font-medium leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-5xl lg:text-[5.4rem] xl:text-[6.5rem]"
         >
           Cinematic product films, built to move fast.
         </motion.h1>
@@ -111,7 +111,7 @@ export default function Hero() {
           <HeroCarousel items={reel} compact />
         </motion.div>
 
-        <div className="mt-8 flex flex-col gap-8 md:mt-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
+        <div className="compact-laptop-hero-body mt-8 flex flex-col gap-8 md:mt-10 lg:flex-row lg:items-end lg:justify-between lg:gap-10">
           <motion.p
             {...fadeUp(!!reduced, 0.3)}
             className="max-w-[21rem] text-base leading-relaxed text-mist sm:max-w-[34rem] md:max-w-xl md:text-lg"
@@ -160,13 +160,16 @@ export default function Hero() {
       </div>
 
       {/* Media carousel */}
-      <motion.div {...fadeUp(!!reduced, 0.55)} className="mt-16 hidden lg:block">
+      <motion.div
+        {...fadeUp(!!reduced, 0.55)}
+        className="compact-laptop-hero-carousel mt-16 hidden lg:block"
+      >
         <HeroCarousel items={reel} />
       </motion.div>
 
       <motion.p
         {...fadeUp(!!reduced, 0.7)}
-        className="mx-auto mt-10 max-w-wrap px-6 text-sm text-mist lg:px-10"
+        className="compact-laptop-hero-caption mx-auto mt-10 max-w-wrap px-6 text-sm text-mist lg:px-10"
       >
         Start with a free teardown. Move into the sprint only when there is a
         clear angle worth making.
