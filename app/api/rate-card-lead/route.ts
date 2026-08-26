@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
 
   const apiKey = process.env.RESEND_API_KEY;
   const from = process.env.CONTACT_FROM_EMAIL;
-  const to = process.env.CONTACT_TO_EMAIL ?? contactEmail;
+  const to = contactEmail;
 
   if (!apiKey || !from) {
     return NextResponse.json(

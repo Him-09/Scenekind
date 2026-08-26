@@ -1,7 +1,7 @@
 export const siteName = "Scenekind";
 export const siteUrl = "https://www.scenekind.studio";
 
-export const contactEmail = "hello@scenekind.studio";
+export const contactEmail = "hello@scenekindstudio.com";
 
 export const siteTitle =
   "Scenekind | AI Commercials, Product Ads & Motion Design Studio";
