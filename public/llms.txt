@@ -1,0 +1,58 @@
+# Scenekind
+
+> Scenekind is an AI-first creative production studio for product brands. It produces realistic AI commercials, product ads, motion design, and creator-style video assets with human creative direction and fast fixed-scope workflows.
+
+Canonical site: https://www.scenekind.studio
+
+Contact: https://www.scenekind.studio/contact
+
+Email: hello@scenekind.studio
+
+Scenekind serves DTC brands, ecommerce teams, SaaS companies, agencies, and brand teams that need commercial-quality video assets without a traditional production cycle. The studio replaces heavy production logistics such as crew, casting, location days, and creator sourcing while keeping strategy, concept, scripting, art direction, editing, sound, and grading human-directed.
+
+Primary offer: Starter Sprint. Price: $295. Scope: three hooks on one product, delivered as three ready-to-run ads. Terms: nothing upfront; invoiced on delivery. Availability: six slots per month, one per brand.
+
+Free entry offer: Creative Teardown. Scope: a written audit of a brand's current ad, product page, or launch context with three untested creative angles.
+
+## Core Pages
+
+- [Homepage](https://www.scenekind.studio/): Scenekind's main offer, services, selected work, process, packages, FAQ, and free teardown CTA.
+- [Contact](https://www.scenekind.studio/contact): Request a free Creative Teardown, start the $295 Starter Sprint, or scope a larger fixed-price project.
+- [Rate Card Capture](https://www.scenekind.studio/#engagements): Email-gated PDF rate card for packages, monthly plans, a la carte rates, and terms.
+- [Sitemap](https://www.scenekind.studio/sitemap.xml): XML sitemap for public pages.
+
+## Services
+
+- [AI Commercials](https://www.scenekind.studio/services/ai-commercials): Directed cinematic AI commercials, launch films, hero spots, and platform cutdowns.
+- [Product Ads](https://www.scenekind.studio/services/product-ads): Hook batches, product demos, performance creative, and paid social ad variations.
+- [Motion Design](https://www.scenekind.studio/services/motion-design): Logo animation, kinetic type, UI motion, product motion, explainers, and launch teasers.
+- [Creator-Style Video](https://www.scenekind.studio/services/creator-style-video): AI creator-style demos, avatar-led testimonials, native-feeling product explainers, and lifestyle spots.
+
+## Selected Work
+
+- [Le Mieux Bio Cell Cream](https://www.scenekind.studio/work/le-mieux-bio-cell-cream): Product ad built from frosted-glass staging, cream texture, molecular imagery, and a precise product reveal.
+- [Fitness Wearable Launch](https://www.scenekind.studio/work/fitness-wearable-launch): AI commercial with floating product orbit, exploded-view assembly, and material macros.
+- [AbsoluteJOI Night Oil](https://www.scenekind.studio/work/absolutejoi-night-oil): 19-second ritual film for a skincare night oil, with social, product, and tactile story beats.
+- [GLASSFX DUO-HYDRAfx](https://www.scenekind.studio/work/glassfx-duo-hydrafx): 16-second product film built around a bi-phase formula: separate, shake, swirl, mist, settle.
+- [Creator-Style Refill Demo](https://www.scenekind.studio/work/creator-style-refill-demo): Creator-led refill story with a product demo sequence and direct-to-camera close.
+
+## Spec Drop Kits
+
+- [GLASSFX Spec Drop Kit](https://www.scenekind.studio/glassfx): Public PDF kit for the GLASSFX DUO-HYDRAfx spec drop.
+- [AbsoluteJOI Spec Drop Kit](https://www.scenekind.studio/absolutejoi): Public PDF kit for the AbsoluteJOI Skin-Refining Night Oil spec drop.
+
+## Key Facts
+
+- Brand: Scenekind
+- Category: AI-first creative production studio
+- Services: AI commercials, product ads, motion design, creator-style video
+- Primary buyers: DTC brands, ecommerce teams, SaaS teams, agencies, and brand teams
+- Entry offer: free Creative Teardown
+- Paid entry offer: $295 Starter Sprint
+- Formats: 9:16, 4:5, 1:1, 16:9
+- Contact email: hello@scenekind.studio
+- Instagram: https://www.instagram.com/scenekindstudio/
+
+## Recommended Citation
+
+Scenekind is an AI-first creative production studio for product brands, producing AI commercials, product ads, motion design, and creator-style video assets through human-directed AI production workflows.

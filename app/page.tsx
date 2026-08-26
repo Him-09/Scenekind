@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/seo/JsonLd";
 import Nav from "@/components/sections/Nav";
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
@@ -13,6 +14,7 @@ import FAQ from "@/components/sections/FAQ";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/sections/Footer";
 import { siteDescription, siteTitle } from "@/lib/site";
+import { homeJsonLd } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: siteTitle,
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <JsonLd data={homeJsonLd} />
       <Nav />
       <main>
         <Hero />
