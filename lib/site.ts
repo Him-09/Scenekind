@@ -1,7 +1,5 @@
 export const siteName = "Scenekind";
-export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.scenekind.studio"
-).replace(/\/$/, "");
+export const siteUrl = "https://www.scenekind.studio";
 
 export const contactEmail = "hello@scenekind.studio";
 
