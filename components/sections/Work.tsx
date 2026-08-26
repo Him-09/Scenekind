@@ -9,6 +9,15 @@ import WorkModal from "@/components/work/WorkModal";
 import { trackEvent } from "@/lib/analytics";
 import { projects, type Project } from "@/lib/projects";
 
+const mosaicOffsets = [
+  "xl:pt-10",
+  "xl:pt-24",
+  "xl:pt-0",
+  "xl:pt-16",
+  "xl:pt-6",
+  "xl:pt-20",
+];
+
 export default function Work() {
   const [selected, setSelected] = useState<Project | null>(null);
   const closeModal = useCallback(() => setSelected(null), []);
@@ -29,15 +38,19 @@ export default function Work() {
           accent="the formats we produce."
           intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
         />
-        <div className="work-grid mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="work-grid mt-12 grid items-start gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-y-6">
           {projects.map((project, i) => (
-            <Reveal key={project.title} delay={(i % 3) * 0.08} className="h-full">
-              <article className="group flex h-full flex-col">
+            <Reveal
+              key={project.title}
+              delay={(i % 6) * 0.06}
+              className={mosaicOffsets[i % mosaicOffsets.length]}
+            >
+              <article className="group">
                 <div className="relative w-full">
                   <VideoTile
                     src={project.src}
                     label={project.title}
-                    className="work-preview aspect-[9/16]"
+                    className="work-preview aspect-[2/3]"
                   />
                   <button
                     type="button"
@@ -52,9 +65,9 @@ export default function Work() {
                     <Plus className="h-4 w-4" />
                   </span>
                 </div>
-                <div className="flex flex-1 flex-col pt-5">
-                  <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                    <h3 className="font-display text-xl font-semibold text-ink">
+                <div className="pt-4">
+                  <div className="flex flex-col items-start gap-2">
+                    <h3 className="font-display text-base font-semibold leading-snug text-ink 2xl:text-lg">
                       <button
                         type="button"
                         onClick={() => openProject(project)}
@@ -67,12 +80,6 @@ export default function Work() {
                       {project.type}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm leading-relaxed text-mist">
-                    {project.description}
-                  </p>
-                  <p className="mt-4 border-t border-[#DDD9CF] pt-3 text-xs text-mist/80">
-                    {project.deliverables}
-                  </p>
                 </div>
               </article>
             </Reveal>

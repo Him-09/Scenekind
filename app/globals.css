@@ -143,7 +143,7 @@ summary:focus-visible {
   }
 
   .work-preview {
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 2 / 3;
   }
 
   .service-card {
@@ -188,13 +188,8 @@ summary:focus-visible {
     padding-bottom: 1.25rem;
   }
 
-  .work-modal-actions,
-  .work-modal-details {
+  .work-modal-actions {
     margin-top: 1.25rem;
-  }
-
-  .work-modal-details {
-    gap: 1.25rem;
   }
 }
 

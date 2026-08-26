@@ -1,47 +1,54 @@
-# Typography Design QA
+# Work Mosaic Design QA
 
-- Source visual truth: `C:\Users\Dell\AppData\Local\Temp\codex-clipboard-fd218b60-8067-4250-a4c6-0f0d45d0ff6d.png`
-- Implementation screenshot: `C:\Users\Dell\Claude\Projects\scenekind.studio\tmp\typography-preview.png`
-- Focused comparison: `C:\Users\Dell\Claude\Projects\scenekind.studio\tmp\typography-preview-focused.png`
-- Viewport: 1280 × 720 CSS px
-- Density: deviceScaleFactor 1; implementation capture 1280 × 720 px
-- Source dimensions: 278 × 122 px
-- Focused implementation dimensions: 1168 × 228 px
-- Normalization: the source is a small typography crop rather than a complete page. The implementation was reviewed once in its full-page context and once as a focused headline crop; no density resampling was needed.
-- State: home-page hero at rest, desktop compact-height layout
+- Source visual truth: `C:\Users\Dell\AppData\Local\Temp\codex-clipboard-e689159d-638e-4f92-8cb9-89ac418c4977.png`
+- Full implementation screenshot: `C:\Users\Dell\Claude\Projects\scenekind.studio\.tmp\work-mosaic-1440-final.png`
+- Focused implementation screenshot: `C:\Users\Dell\Claude\Projects\scenekind.studio\.tmp\work-mosaic-grid-focus-1440.png`
+- Compact-laptop screenshot: `C:\Users\Dell\Claude\Projects\scenekind.studio\.tmp\work-laptop-1024.png`
+- Mobile screenshot: `C:\Users\Dell\Claude\Projects\scenekind.studio\.tmp\work-mobile-390-v2.png`
+- Viewports: 1440 × 880, 1024 × 768, and 390 × 844 CSS px
+- Source dimensions: 1440 × 880 px
+- Implementation dimensions: 1440 × 880 px at deviceScaleFactor 1 for the primary comparison
+- Normalization: the source and primary implementation captures use identical pixel dimensions and density. The focused implementation is scrolled to place the media row at the same visual scale as the source collage.
+- State: Work section at rest; one additional interaction pass covered sound toggling and the simplified project modal.
 
 ## Full-view comparison evidence
 
-The new display system preserves the existing Scenekind layout while translating the reference treatment into the hero and section headings. The sans-serif statement remains dominant, the italic serif payoff creates the intended editorial contrast, and the compact-laptop composition remains above the fold.
+The implementation translates the reference's narrow, portrait-led editorial collage into the existing Scenekind Work section. On wide screens, six equal media columns use alternating vertical offsets, compact gaps, and a warm neutral canvas. The site heading, project names, type labels, sound controls, and modal affordances remain intentionally visible because they are part of the working portfolio rather than the source's campaign moodboard.
 
 ## Focused comparison evidence
 
-The reference pairs a heavy, clean sans-serif statement with a lighter italic serif payoff on the same baseline system. The focused implementation reproduces that hierarchy with Instrument Sans at weight 600 and Instrument Serif Italic at weight 400. The serif phrase is kept as one wrapping unit so it reads as a deliberate payoff rather than scattered emphasis.
+At 1440 × 880, the reference uses roughly 200 px-wide portrait tiles with tight gutters and varied vertical starts. The implementation uses 208 px-wide tiles, 16 px horizontal gutters, and six distinct vertical starts. Rounded corners remain larger than the reference as an intentional Scenekind design-system constraint. The source stacks multiple images in some columns; the implementation keeps one tile per column because there are exactly six projects and duplication was explicitly excluded.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: passed. Instrument Sans 600 matches the reference's sturdy sans-serif voice; Instrument Serif Italic 400 supplies the contrasting editorial phrase. Line height and tracking retain legibility at responsive sizes.
-- Spacing and layout rhythm: passed. Existing responsive spacing is preserved, and the new mixed-font line wraps cleanly at the tested compact desktop viewport.
-- Colors and visual tokens: passed. The typography reference does not require a palette change, so Scenekind's cream, ink, and mist tokens remain intentional.
-- Image quality and asset fidelity: passed. The request targets typography only; existing portfolio media remains unchanged and no reference asset was replaced or approximated.
-- Copy and content: passed. Existing site wording is preserved; only semantic emphasis was added.
+- Fonts and typography: passed. Existing Instrument Sans and Instrument Serif preserve the site's hierarchy; compact project labels remain legible beneath the narrower tiles.
+- Spacing and layout rhythm: passed. Six columns, staggered starts, compact gutters, and portrait crops reproduce the reference's editorial rhythm without overlapping or clipping. The layout collapses to three columns at 1024 px and one column at 390 px.
+- Colors and visual tokens: passed. The reference's warm off-white canvas aligns closely with Scenekind's existing cream tokens; no unnecessary palette change was introduced.
+- Image quality and asset fidelity: passed. All six real project videos remain in use, with object-cover preview crops and full 9:16 playback retained in the modal. No placeholder or generated substitute was introduced.
+- Copy and content: passed. Every project retains its name and type. The restored Skincare Application Demo brings the Work grid back to six unique videos.
+- Icons and affordances: passed. Sound buttons remain visible and operable; the existing hover-only modal affordance does not obstruct the media.
+- Accessibility and responsiveness: passed. Project controls remain semantic buttons, focus styles are preserved, and no horizontal overflow was found at 1024 px or 390 px.
 
 ## Primary interactions and console
 
-- Main navigation to Work: passed.
-- Opening and closing the first work modal: passed.
-- Console errors during the tested flow: none.
+- Six unique Work cards rendered: passed.
+- Work-card sound toggle changed `aria-pressed` from `false` to `true`, then muted again: passed.
+- First project modal opened and closed: passed.
+- Removed production-detail labels were absent from the modal: passed.
+- Browser console checked. No application rendering or interaction errors were found. Two non-blocking Mixpanel mutex timeout messages appeared in the local development session and are unrelated to the layout.
 
 ## Findings
 
-No actionable P0, P1, or P2 differences remain. The source crop is highly compressed, so exact letterform identification is not possible; the selected open-source pair is an intentionally close match to the visible sans-plus-editorial-serif relationship.
+No actionable P0, P1, or P2 differences remain. The larger card radius, persistent project labels, and single-tile-per-project structure are intentional adaptations to the existing product and six-project content limit.
 
 ## Comparison history
 
-- Pass 1: no P0/P1/P2 issues found; no corrective iteration required.
+- Pass 1: mobile capture initially reported a 728 px document width because the long-running development server's assets had become stale after a production build.
+- Fix: restarted the local development server and reloaded the same responsive states.
+- Pass 2: mobile document width measured 375 px inside the 390 px viewport, the 1024 px layout rendered three 299 px columns, and the final 1440 px layout rendered six 208 px columns with the intended stagger. No remaining P0/P1/P2 findings.
 
 ## Follow-up polish
 
-- P3: If a higher-resolution typography reference becomes available, the serif's stroke contrast and terminal shapes can be tuned more precisely.
+- P3: If the portfolio grows beyond six projects, selected columns can stack a second tile to move even closer to the reference's deeper masonry composition.
 
 final result: passed

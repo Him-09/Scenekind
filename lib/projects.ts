@@ -182,4 +182,34 @@ export const projects: Project[] = [
       onScreenType: "Light-touch captions and product callouts designed for feed viewing.",
     },
   },
+  {
+    type: "Product Ad",
+    title: "Skincare Application Demo",
+    description:
+      "A clean application story built around product texture, direct-to-camera presence, and a natural-skin finish.",
+    deliverables: "15s product ad · application sequence · beauty close-up",
+    src: "/videos/skincare-paid-social.mp4",
+    details: {
+      overview:
+        "A concise skincare demo that keeps the application ritual easy to follow. Product, texture, and face coverage move in a clear sequence before the film resolves on a fresh, luminous beauty close-up.",
+      builtFor: "Paid social, product education, and skincare launch campaigns.",
+      hook: "Turn a simple application step into a polished beauty payoff.",
+      direction:
+        "Soft, bright, and natural, with clean skin detail and restrained product styling.",
+      sequence: [
+        "The product and creator establish the routine.",
+        "Application detail makes the texture and motion clear.",
+        "A close beauty frame delivers the finished-skin payoff.",
+      ],
+      deliverables: [
+        "15s paid-social film",
+        "Application and texture coverage",
+        "Beauty close-up and final product beat",
+      ],
+      formats: ["9:16"],
+      runtime: "15 seconds",
+      sound: "Light music with restrained application and product accents.",
+      onScreenType: "Minimal product copy designed to stay legible in-feed.",
+    },
+  },
 ];
