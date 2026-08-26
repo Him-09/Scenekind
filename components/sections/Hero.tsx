@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, useReducedMotion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import HeroCarousel, { type CarouselItem } from "@/components/ui/HeroCarousel";
+import HighlightText from "@/components/ui/HighlightText";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
@@ -107,9 +108,7 @@ export default function Hero() {
           className="compact-laptop-hero-title max-w-[21rem] text-balance font-display text-[2.35rem] font-semibold leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-6xl lg:text-[5.4rem] xl:text-[6.5rem]"
         >
           Cinematic product films,{" "}
-          <em className="inline-block font-accent font-normal italic leading-[0.92] tracking-[-0.025em]">
-            built to move fast.
-          </em>
+          <HighlightText>built to move fast.</HighlightText>
         </motion.h1>
 
         <motion.div

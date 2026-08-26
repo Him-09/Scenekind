@@ -78,12 +78,14 @@ summary:focus-visible {
   border-top: 1px solid #ddd9cf;
 }
 
-/* Semi-transparent acetate highlight used by the nine annotated headings. */
+/* Semi-transparent acetate highlight that draws on as headings enter view. */
 .heading-highlight {
   --heading-highlight-color: rgba(122, 120, 111, 0.3);
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   padding-inline: 0.035em;
+  background-repeat: no-repeat;
+  background-position: left bottom;
   background-image: linear-gradient(
     to bottom,
     transparent 58%,

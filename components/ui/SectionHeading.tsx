@@ -1,5 +1,6 @@
 import { cn } from "@/lib/cn";
 import Reveal from "@/components/ui/Reveal";
+import HighlightText from "@/components/ui/HighlightText";
 
 type SectionHeadingProps = {
   eyebrow: string;
@@ -42,9 +43,7 @@ export default function SectionHeading({
         {accent && title.endsWith(accent) ? (
           <>
             {title.slice(0, -accent.length).trimEnd()}{" "}
-            <span className="heading-highlight">
-              {accent}
-            </span>
+            <HighlightText>{accent}</HighlightText>
           </>
         ) : (
           title
