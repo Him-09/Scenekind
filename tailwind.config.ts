@@ -23,7 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
-        accent: ["var(--font-accent)", "Georgia", "serif"],
+        accent: ["Times New Roman", "Times", "serif"],
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
       },
       fontSize: {

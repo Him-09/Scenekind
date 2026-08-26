@@ -42,9 +42,9 @@ export default function SectionHeading({
         {accent && title.endsWith(accent) ? (
           <>
             {title.slice(0, -accent.length).trimEnd()}{" "}
-            <em className="inline-block font-accent font-normal italic leading-[0.95] tracking-[-0.025em]">
+            <span className="inline-block font-accent font-normal leading-[0.95] tracking-[-0.01em]">
               {accent}
-            </em>
+            </span>
           </>
         ) : (
           title
