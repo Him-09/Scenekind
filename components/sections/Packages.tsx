@@ -19,7 +19,7 @@ export default function Packages() {
           </p>
           <h2 className="max-w-3xl font-display text-[2.1rem] font-semibold leading-[1.06] tracking-normal sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
             The sprint is the audition{" "}
-            <span className="inline-block font-accent font-normal leading-[0.95] tracking-[-0.01em]">
+            <span className="heading-highlight heading-highlight-inverse">
               after the free teardown.
             </span>
           </h2>

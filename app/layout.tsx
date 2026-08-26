@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Inter } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif, Inter } from "next/font/google";
 import AnalyticsProvider from "@/components/providers/AnalyticsProvider";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import {
@@ -15,6 +15,13 @@ import "./globals.css";
 const display = Instrument_Sans({
   subsets: ["latin"],
   variable: "--font-display",
+});
+
+const accent = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  variable: "--font-accent",
 });
 
 const sans = Inter({
@@ -79,7 +86,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${sans.variable}`}
+      className={`${display.variable} ${accent.variable} ${sans.variable}`}
     >
       <body className="grain">
         <AnalyticsProvider />

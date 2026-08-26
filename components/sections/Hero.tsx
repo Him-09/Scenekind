@@ -107,9 +107,9 @@ export default function Hero() {
           className="compact-laptop-hero-title max-w-[21rem] text-balance font-display text-[2.35rem] font-semibold leading-[1.02] tracking-normal text-ink sm:max-w-[38rem] sm:text-[3.3rem] md:max-w-[46rem] md:text-[4.2rem] lg:max-w-6xl lg:text-[5.4rem] xl:text-[6.5rem]"
         >
           Cinematic product films,{" "}
-          <span className="inline-block font-accent font-normal leading-[0.92] tracking-[-0.01em]">
+          <em className="inline-block font-accent font-normal italic leading-[0.92] tracking-[-0.025em]">
             built to move fast.
-          </span>
+          </em>
         </motion.h1>
 
         <motion.div

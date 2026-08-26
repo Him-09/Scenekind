@@ -73,9 +73,9 @@ export default function ContactPage() {
               </p>
               <h1 className="font-display text-[2.1rem] font-semibold leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
                 Get a free teardown or{" "}
-                <span className="inline-block font-accent font-normal leading-[0.95] tracking-[-0.01em]">
+                <em className="inline-block font-accent font-normal italic leading-[0.95] tracking-[-0.025em]">
                   start the sprint.
-                </span>
+                </em>
               </h1>
               <p className="mt-6 max-w-md text-base leading-relaxed text-mist md:text-lg">
                 Ask for a Creative Teardown first when you want a quick read on

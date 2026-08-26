@@ -78,6 +78,25 @@ summary:focus-visible {
   border-top: 1px solid #ddd9cf;
 }
 
+/* Semi-transparent acetate highlight used by the nine annotated headings. */
+.heading-highlight {
+  --heading-highlight-color: rgba(122, 120, 111, 0.3);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  padding-inline: 0.035em;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 58%,
+    var(--heading-highlight-color) 58%,
+    var(--heading-highlight-color) 90%,
+    transparent 90%
+  );
+}
+
+.heading-highlight-inverse {
+  --heading-highlight-color: rgba(242, 240, 234, 0.24);
+}
+
 /* Keep wide-but-short laptop viewports from inheriting monitor-scale spacing. */
 @media (min-width: 64rem) and (max-height: 56.25rem) {
   .site-nav {
