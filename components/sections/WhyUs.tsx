@@ -49,6 +49,7 @@ export default function WhyUs() {
         <SectionHeading
           eyebrow="Why Scenekind"
           title="Built for brands that need quality and speed."
+          accent="quality and speed."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {benefits.map((benefit, i) => (

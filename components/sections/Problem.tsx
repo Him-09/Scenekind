@@ -32,6 +32,7 @@ export default function Problem() {
         <SectionHeading
           eyebrow="The Problem"
           title="Traditional production wasn't built for the speed brands need now."
+          accent="the speed brands need now."
         />
         <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {pains.map((pain, i) => (

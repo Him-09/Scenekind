@@ -45,6 +45,7 @@ export default function FAQ() {
             <SectionHeading
               eyebrow="FAQ"
               title="Questions worth asking."
+              accent="worth asking."
               intro="Straight answers about how AI-first production actually works."
             />
           </div>

@@ -144,7 +144,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                 </span>
                 <h3
                   id="work-modal-title"
-                  className="work-modal-title mt-4 font-display text-2xl font-medium leading-[1.08] tracking-normal text-ink sm:text-3xl xl:text-4xl"
+                  className="work-modal-title mt-4 font-display text-2xl font-semibold leading-[1.08] tracking-normal text-ink sm:text-3xl xl:text-4xl"
                 >
                   {project.title}
                 </h3>

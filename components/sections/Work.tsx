@@ -26,6 +26,7 @@ export default function Work() {
         <SectionHeading
           eyebrow="Work"
           title="Selected work across the formats we produce."
+          accent="the formats we produce."
           intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
         />
         <div className="work-grid mt-12 grid gap-x-6 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">
@@ -53,7 +54,7 @@ export default function Work() {
                 </div>
                 <div className="flex flex-1 flex-col pt-5">
                   <div className="flex flex-col items-start gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                    <h3 className="font-display text-xl font-medium text-ink">
+                    <h3 className="font-display text-xl font-semibold text-ink">
                       <button
                         type="button"
                         onClick={() => openProject(project)}

@@ -17,8 +17,11 @@ export default function Packages() {
             />
             Packages
           </p>
-          <h2 className="max-w-3xl font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
-            The sprint is the audition after the free teardown.
+          <h2 className="max-w-3xl font-display text-[2.1rem] font-semibold leading-[1.06] tracking-normal sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
+            The sprint is the audition{" "}
+            <em className="inline-block font-accent font-normal italic leading-[0.95] tracking-[-0.025em]">
+              after the free teardown.
+            </em>
           </h2>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#F2F0EA]/60 md:text-lg">
             The teardown is the opener. If the angle is worth making, the

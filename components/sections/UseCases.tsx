@@ -27,6 +27,7 @@ export default function UseCases() {
         <SectionHeading
           eyebrow="Who It's For"
           title="Production that fits how your team ships."
+          accent="how your team ships."
         />
         <ul className="mt-12 divide-y divide-line border-y border-line">
           {useCases.map((useCase, i) => (

@@ -45,6 +45,7 @@ export default function Solution() {
         <SectionHeading
           eyebrow="The Approach"
           title="We compress the path from idea to finished asset."
+          accent="to finished asset."
           intro="Scenekind replaces the heaviest parts of production — sourcing, shooting, logistics — with an AI-first pipeline, while keeping the parts that make work great: strategy, direction, and craft. The result is commercial-grade creative on a timeline built for modern campaigns."
         />
         <ol className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 xl:grid-cols-3">

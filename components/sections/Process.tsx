@@ -80,6 +80,7 @@ export default function Process() {
             <SectionHeading
               eyebrow="Process"
               title="A faster production workflow, built for modern campaigns."
+              accent="built for modern campaigns."
               intro="Five stages, one pipeline. Everything a traditional production delivers — minus the waiting."
             />
           </div>

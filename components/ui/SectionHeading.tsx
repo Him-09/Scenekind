@@ -4,6 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 type SectionHeadingProps = {
   eyebrow: string;
   title: string;
+  accent?: string;
   intro?: string;
   align?: "left" | "center";
   className?: string;
@@ -12,6 +13,7 @@ type SectionHeadingProps = {
 export default function SectionHeading({
   eyebrow,
   title,
+  accent,
   intro,
   align = "left",
   className,
@@ -36,8 +38,17 @@ export default function SectionHeading({
         />
         {eyebrow}
       </p>
-      <h2 className="section-heading-title font-display text-[2.1rem] font-medium leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
-        {title}
+      <h2 className="section-heading-title font-display text-[2.1rem] font-semibold leading-[1.06] tracking-normal text-ink sm:text-[2.65rem] lg:text-[3.6rem] xl:text-[4rem]">
+        {accent && title.endsWith(accent) ? (
+          <>
+            {title.slice(0, -accent.length).trimEnd()}{" "}
+            <em className="inline-block font-accent font-normal italic leading-[0.95] tracking-[-0.025em]">
+              {accent}
+            </em>
+          </>
+        ) : (
+          title
+        )}
       </h2>
       {intro && (
         <p className="section-heading-intro mt-5 text-base leading-relaxed text-mist md:text-lg">

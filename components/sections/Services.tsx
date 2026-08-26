@@ -73,6 +73,7 @@ export default function Services() {
         <SectionHeading
           eyebrow="Services"
           title="Four ways we produce for you."
+          accent="for you."
           intro="Every engagement is directed like a commercial project — strategy first, then craft. The pipeline is AI-first; the standards aren't any different."
         />
         <div className="services-list mt-12 space-y-5">
@@ -100,7 +101,7 @@ export default function Services() {
                     </span>
                   )}
                   <h3
-                    className={`font-display text-[2rem] font-medium leading-[1.08] tracking-normal sm:text-3xl md:text-4xl ${
+                    className={`font-display text-[2rem] font-semibold leading-[1.08] tracking-normal sm:text-3xl md:text-4xl ${
                       service.flagship ? "text-[#F2F0EA]" : "text-ink"
                     }`}
                   >
