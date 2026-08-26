@@ -50,6 +50,11 @@ const reel: CarouselItem[] = [
     label: "Skincare Application Demo",
     caption: "Product Ad",
   },
+  {
+    src: "/videos/rhode-glazing-milk.mp4",
+    label: "Rhode Glazing Milk",
+    caption: "Product Ad",
+  },
 ];
 
 export default function Hero() {

@@ -212,4 +212,35 @@ export const projects: Project[] = [
       onScreenType: "Minimal product copy designed to stay legible in-feed.",
     },
   },
+  {
+    type: "Product Ad",
+    title: "Rhode Glazing Milk",
+    description:
+      "A moody bathroom ritual pairing intimate mirror portraits, raw skin texture, and tactile Glazing Milk application close-ups.",
+    deliverables: "32s vertical film · skincare ritual · product and application close-ups",
+    src: "/videos/rhode-glazing-milk.mp4",
+    details: {
+      overview:
+        "A private skincare ritual unfolds through a dim bathroom mirror. Intimate portraits and honest skin texture lead into the Rhode bottle, fingertip application, and a quiet return to the reflection.",
+      builtFor: "Beauty campaigns, organic social, and skincare product storytelling.",
+      hook: "A bathroom mirror turns a private ritual into a cinematic product story.",
+      direction:
+        "Moody, intimate, and tactile, with tungsten light, deep shadows, aged tile, and close natural-skin detail.",
+      sequence: [
+        "A low-lit mirror portrait establishes the private setting.",
+        "The Rhode bottle enters on the bathroom sink.",
+        "Skin and fingertip macros make the application tactile.",
+        "The film resolves on the creator and product in the mirror.",
+      ],
+      deliverables: [
+        "32s vertical product film",
+        "Portrait, product, and application coverage",
+        "Natural-skin and mirror-storytelling close-ups",
+      ],
+      formats: ["9:16"],
+      runtime: "32 seconds",
+      sound: "Original supplied audio mix.",
+      onScreenType: "The product label carries the branding with minimal added copy.",
+    },
+  },
 ];

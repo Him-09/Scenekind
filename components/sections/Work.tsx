@@ -10,12 +10,13 @@ import { trackEvent } from "@/lib/analytics";
 import { projects, type Project } from "@/lib/projects";
 
 const mosaicOffsets = [
-  "xl:pt-10",
-  "xl:pt-24",
-  "xl:pt-0",
-  "xl:pt-16",
-  "xl:pt-6",
-  "xl:pt-20",
+  "min-[1440px]:pt-10",
+  "min-[1440px]:pt-24",
+  "min-[1440px]:pt-0",
+  "min-[1440px]:pt-16",
+  "min-[1440px]:pt-6",
+  "min-[1440px]:pt-20",
+  "min-[1440px]:pt-12",
 ];
 
 export default function Work() {
@@ -38,11 +39,11 @@ export default function Work() {
           accent="the formats we produce."
           intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
         />
-        <div className="work-grid mt-12 grid items-start gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 xl:gap-y-6">
+        <div className="work-grid mt-12 grid items-start gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 min-[1440px]:grid-cols-7 min-[1440px]:gap-y-6">
           {projects.map((project, i) => (
             <Reveal
               key={project.title}
-              delay={(i % 6) * 0.06}
+              delay={(i % 7) * 0.06}
               className={mosaicOffsets[i % mosaicOffsets.length]}
             >
               <article className="group">
