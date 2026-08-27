@@ -39,7 +39,7 @@ export default function Packages() {
                   Starter Sprint
                 </h3>
                 <p className="mt-2 text-sm font-medium text-[#F2F0EA]/70 md:text-base">
-                  Three hooks on one product, five business days.
+                  Three hooks on one product, delivered within 24 hours.
                 </p>
                 <p className="mt-3 text-sm font-semibold leading-relaxed md:text-base">
                   Nothing upfront. You pay on delivery - and only if you&apos;d
