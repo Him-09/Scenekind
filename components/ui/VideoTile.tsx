@@ -11,10 +11,11 @@ type VideoTileProps = {
   label: string;
   poster?: string;
   className?: string;
+  allowSound?: boolean;
 };
 
 /**
- * Portfolio video tile: starts muted, loops, and offers an explicit sound toggle.
+ * Portfolio video tile: starts muted and loops. Sound is opt-in for modal use.
  * Plays while in view (and on hover/focus), pauses off-screen.
  * If the file is missing, falls back to a labeled placeholder.
  */
@@ -23,6 +24,7 @@ export default function VideoTile({
   label,
   poster,
   className,
+  allowSound = false,
 }: VideoTileProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
@@ -56,6 +58,13 @@ export default function VideoTile({
 
   // Keep only one portfolio video audible at a time.
   useEffect(() => {
+    if (!allowSound) {
+      const video = videoRef.current;
+      if (video) video.muted = true;
+      setMuted(true);
+      return;
+    }
+
     const muteWhenAnotherStarts = (event: Event) => {
       if ((event as CustomEvent<string>).detail === instanceId) return;
       const video = videoRef.current;
@@ -66,9 +75,11 @@ export default function VideoTile({
     window.addEventListener(videoUnmutedEvent, muteWhenAnotherStarts);
     return () =>
       window.removeEventListener(videoUnmutedEvent, muteWhenAnotherStarts);
-  }, [instanceId]);
+  }, [allowSound, instanceId]);
 
   const toggleSound = () => {
+    if (!allowSound) return;
+
     const video = videoRef.current;
     if (!video) return;
 
@@ -102,7 +113,7 @@ export default function VideoTile({
           src={src}
           poster={poster}
           autoPlay
-          muted={muted}
+          muted={allowSound ? muted : true}
           loop
           playsInline
           preload="auto"
@@ -126,7 +137,7 @@ export default function VideoTile({
         </div>
       )}
 
-      {!failed && (
+      {allowSound && !failed && (
         <button
           type="button"
           onClick={toggleSound}

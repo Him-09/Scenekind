@@ -134,6 +134,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
                   src={project.src}
                   label={project.title}
                   className="aspect-[9/16]"
+                  allowSound
                 />
               </div>
 
