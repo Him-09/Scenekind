@@ -11,9 +11,9 @@ import { projects, type Project } from "@/lib/projects";
 
 const mosaicColumns = [
   [0, 1],
-  [2, 3],
-  [4, 5],
-  [6],
+  [2],
+  [3, 4],
+  [5],
 ];
 
 const mosaicColumnOffsets = [
@@ -65,7 +65,7 @@ export default function Work() {
                 return (
                   <Reveal
                     key={project.title}
-                    delay={(projectIndex % 7) * 0.06}
+                    delay={(projectIndex % projects.length) * 0.06}
                   >
                     <article className="group">
                       <div className="relative w-full">

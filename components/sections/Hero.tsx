@@ -47,11 +47,6 @@ const reel: CarouselItem[] = [
     caption: "AI Commercial",
   },
   {
-    src: "/videos/skincare-paid-social.mp4",
-    label: "Skincare Application Demo",
-    caption: "Product Ad",
-  },
-  {
     src: "/videos/rhode-glazing-milk.mp4",
     label: "Rhode Glazing Milk",
     caption: "Product Ad",
