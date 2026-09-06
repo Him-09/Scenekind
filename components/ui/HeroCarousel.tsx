@@ -6,6 +6,7 @@ import { cn } from "@/lib/cn";
 
 export type CarouselItem = {
   src: string;
+  poster?: string;
   label: string;
   caption: string;
 };
@@ -53,6 +54,7 @@ export default function HeroCarousel({
           >
             <VideoTile
               src={item.src}
+              poster={item.poster}
               label={item.label}
               className="aspect-[9/16]"
             />

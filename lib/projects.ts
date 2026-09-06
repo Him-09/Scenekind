@@ -4,6 +4,8 @@ export type Project = {
   description: string;
   deliverables: string;
   src: string;
+  poster?: string;
+  orientation?: "portrait" | "landscape";
   specKitHref?: string;
   details: {
     overview: string;
@@ -17,6 +19,44 @@ export type Project = {
     sound: string;
     onScreenType: string;
   };
+};
+
+export const halcyonProject: Project = {
+  type: "AI Commercial",
+  title: "HALCYON — Is parking free here?",
+  description:
+    "A 30-second consumer-tech commercial where an unbearable city soundscape collapses into calm before an alien lands the final joke.",
+  deliverables: "30s commercial · sound-design film · consumer tech",
+  src: "/videos/halcyon-is-parking-free.mp4",
+  poster: "/images/halcyon/poster.webp",
+  orientation: "landscape",
+  details: {
+    overview:
+      "HALCYON turns active noise cancellation into a physical experience. Seven city noises stack to an unbearable peak, the headphones seal, and the camera settles into designed calm while the chaos keeps moving — all the way to a spaceship, an alien, and one politely absurd parking question.",
+    builtFor:
+      "Over-ear headphone launches, consumer-tech campaigns, and sound-led brand placements.",
+    hook:
+      "The loudest street imaginable goes calm — until an alien asks about parking.",
+    direction:
+      "Cold, overcast city realism with sharp color accents in the chaos and one clean teal product cue. Handheld, jagged movement becomes locked, level, and unhurried the instant the earcups seal.",
+    sequence: [
+      "Jackhammer, alarm, baby, dog, marching band, argument, and helicopter build into one hostile wall of sound.",
+      "The earcups seal on a single frame and the mix drops into a soft cancelled tone with footsteps, coat, and breath brought close.",
+      "The street stays visually chaotic while a vast ship lands behind the listener; she never flinches or breaks pace.",
+      "An alien asks if parking is free. Lifting and reseating one earcup makes the full noise wall return, then disappear, for a second product demonstration.",
+    ],
+    deliverables: [
+      "30s finished 16:9 commercial",
+      "Three-state custom sound design and final mix",
+      "Product demonstration, narrative payoff, and campaign-ready master",
+    ],
+    formats: ["16:9"],
+    runtime: "30 seconds",
+    sound:
+      "No music: escalating location noise, a designed cancelled tone, and a four-second full-noise return when one earcup lifts.",
+    onScreenType:
+      "No subtitles or claims over picture; the product experience and final parking gag carry the film.",
+  },
 };
 
 /**
@@ -213,4 +253,5 @@ export const projects: Project[] = [
       onScreenType: "The product label carries the branding with minimal added copy.",
     },
   },
+  halcyonProject,
 ];

@@ -51,6 +51,12 @@ const reel: CarouselItem[] = [
     label: "Rhode Glazing Milk",
     caption: "Product Ad",
   },
+  {
+    src: "/videos/halcyon-is-parking-free.mp4",
+    poster: "/images/halcyon/poster.webp",
+    label: "HALCYON — Is parking free here?",
+    caption: "AI Commercial",
+  },
 ];
 
 export default function Hero() {

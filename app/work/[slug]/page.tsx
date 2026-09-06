@@ -76,7 +76,12 @@ export default function WorkPage({ params }: WorkPageProps) {
                 muted
                 playsInline
                 preload="metadata"
-                className="aspect-[9/16] h-auto w-full bg-[#171716] object-cover"
+                poster={work.poster}
+                className={`${
+                  work.orientation === "landscape"
+                    ? "aspect-video"
+                    : "aspect-[9/16]"
+                } h-auto w-full bg-[#171716] object-cover`}
               />
             </div>
 

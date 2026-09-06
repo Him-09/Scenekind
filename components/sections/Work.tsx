@@ -11,9 +11,9 @@ import { projects, type Project } from "@/lib/projects";
 
 const mosaicColumns = [
   [0, 1],
-  [2],
-  [3, 4],
-  [5],
+  [2, 3],
+  [4, 5],
+  [6],
 ];
 
 const mosaicColumnOffsets = [
@@ -72,6 +72,7 @@ export default function Work() {
                         <VideoTile
                           src={project.src}
                           label={project.title}
+                          poster={project.poster}
                           className={`work-preview aspect-[2/3] ${mosaicRatios[projectIndex % mosaicRatios.length]}`}
                         />
                         <button

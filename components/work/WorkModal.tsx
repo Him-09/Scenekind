@@ -21,6 +21,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
   const panelRef = useRef<HTMLDivElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const reduced = useReducedMotion();
+  const isLandscape = project?.orientation === "landscape";
 
   useEffect(() => {
     if (!project) return;
@@ -116,6 +117,7 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
             exit={{ opacity: 0, y: reduced ? 0 : 24, scale: reduced ? 1 : 0.98 }}
             transition={{ duration: reduced ? 0.1 : 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="work-modal-panel relative max-h-[calc(100dvh-1.5rem)] w-full max-w-6xl overflow-y-auto rounded-[22px] bg-[#FBFAF7] shadow-[0_40px_120px_-24px_rgba(0,0,0,0.45)] sm:max-h-[90vh] lg:max-h-[calc(100dvh-3rem)] md:rounded-[28px]"
+            style={isLandscape ? { maxWidth: "80rem" } : undefined}
           >
             <button
               ref={closeRef}
@@ -127,19 +129,33 @@ export default function WorkModal({ project, onClose }: WorkModalProps) {
               <X className="h-4 w-4" aria-hidden="true" />
             </button>
 
-            <div className="work-modal-layout grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:p-8 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-12 xl:p-10">
-              {/* Video — 9:16 */}
-              <div className="work-modal-media mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0 lg:max-w-[280px] xl:max-w-[320px]">
+            <div
+              className="work-modal-layout grid gap-8 p-5 sm:p-6 lg:grid-cols-[minmax(0,280px)_1fr] lg:gap-8 lg:p-8 xl:grid-cols-[minmax(0,320px)_1fr] xl:gap-12 xl:p-10"
+              style={
+                isLandscape
+                  ? { gridTemplateColumns: "minmax(0, 1fr)" }
+                  : undefined
+              }
+            >
+              {/* Project film */}
+              <div
+                className={
+                  isLandscape
+                    ? "mx-auto w-full max-w-5xl"
+                    : "work-modal-media mx-auto w-full max-w-[260px] sm:max-w-[320px] lg:mx-0 lg:max-w-[280px] xl:max-w-[320px]"
+                }
+              >
                 <VideoTile
                   src={project.src}
                   label={project.title}
-                  className="aspect-[9/16]"
+                  poster={project.poster}
+                  className={isLandscape ? "aspect-video" : "aspect-[9/16]"}
                   allowSound
                 />
               </div>
 
               {/* Details */}
-              <div className="min-w-0">
+              <div className={isLandscape ? "mx-auto w-full max-w-5xl min-w-0" : "min-w-0"}>
                 <span className="inline-flex rounded-full border border-[#DDD9CF] px-3 py-1 text-[11px] text-mist">
                   {project.type}
                 </span>

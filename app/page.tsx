@@ -6,6 +6,7 @@ import Problem from "@/components/sections/Problem";
 import Solution from "@/components/sections/Solution";
 import Services from "@/components/sections/Services";
 import Work from "@/components/sections/Work";
+import HalcyonFeature from "@/components/sections/HalcyonFeature";
 import Process from "@/components/sections/Process";
 import WhyUs from "@/components/sections/WhyUs";
 import UseCases from "@/components/sections/UseCases";
@@ -40,6 +41,7 @@ export default function Home() {
         <Solution />
         <Services />
         <Work />
+        <HalcyonFeature />
         <Process />
         <WhyUs />
         <UseCases />
