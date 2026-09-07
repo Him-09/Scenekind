@@ -25,37 +25,44 @@ const reel: CarouselItem[] = [
     src: "/videos/skincare-product-spotlight.mp4",
     label: "Le Mieux Bio Cell Cream",
     caption: "Product Ad",
+    href: "/#work",
   },
   {
     src: "/videos/absolutejoi-night-oil.mp4",
     label: "AbsoluteJOI Night Oil",
     caption: "AI Commercial",
+    href: "/#work",
   },
   {
     src: "/videos/glassfx-duo-hydrafx.mp4",
     label: "GLASSFX DUO-HYDRAfx",
     caption: "AI Commercial",
+    href: "/#work",
   },
   {
     src: "/videos/creator-testimonial-batch.mp4",
     label: "Creator-Style Refill Demo",
     caption: "Creator-Style Video",
+    href: "/#work",
   },
   {
     src: "/videos/fitness-wearable-launch.mp4",
     label: "Fitness Wearable Launch",
     caption: "AI Commercial",
+    href: "/#work",
   },
   {
     src: "/videos/rhode-glazing-milk.mp4",
     label: "Rhode Glazing Milk",
     caption: "Product Ad",
+    href: "/#work",
   },
   {
     src: "/videos/halcyon-is-parking-free.mp4",
     poster: "/images/halcyon/poster.webp",
     label: "HALCYON — Is parking free here?",
     caption: "AI Commercial",
+    href: "/#halcyon",
   },
 ];
 

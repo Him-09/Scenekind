@@ -1,7 +1,6 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import Image from "next/image";
 import { Play, Volume2 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import VideoTile from "@/components/ui/VideoTile";
@@ -24,39 +23,6 @@ const soundStates = [
     time: "20—30",
     label: "Proof + payoff",
     copy: "One lifted earcup brings the full wall back before the alien lands the parking question.",
-  },
-] as const;
-
-const referenceFrames = [
-  {
-    src: "/images/halcyon/listener.webp",
-    alt: "HALCYON listener casting and wardrobe reference",
-    label: "Listener study",
-    className: "xl:col-span-3",
-  },
-  {
-    src: "/images/halcyon/headphones.webp",
-    alt: "HALCYON over-ear headphone product reference",
-    label: "Product lock",
-    className: "xl:col-span-3",
-  },
-  {
-    src: "/images/halcyon/street.webp",
-    alt: "Urban street environment reference for the HALCYON commercial",
-    label: "Chaos plate",
-    className: "xl:col-span-2",
-  },
-  {
-    src: "/images/halcyon/alien.webp",
-    alt: "Alien character reference for the HALCYON commercial",
-    label: "Final character",
-    className: "xl:col-span-2",
-  },
-  {
-    src: "/images/halcyon/ship.webp",
-    alt: "Spaceship prop reference for the HALCYON commercial",
-    label: "The button",
-    className: "xl:col-span-2",
   },
 ] as const;
 
@@ -117,22 +83,23 @@ export default function HalcyonFeature() {
               poster="/images/halcyon/poster.webp"
               label={halcyonProject.title}
               className="aspect-video rounded-none bg-black"
+              allowSound
             />
-            <button
-              type="button"
-              onClick={openFilm}
-              aria-label="Open HALCYON commercial with sound"
-              className="absolute inset-0 z-10 flex items-end justify-between gap-4 p-5 text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white sm:p-7"
-            >
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#F2F0EA] px-4 py-2.5 text-xs font-semibold text-[#171716] shadow-lg transition-transform duration-300 group-hover:-translate-y-1 sm:px-5 sm:text-sm">
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-end justify-between gap-4 p-5 sm:p-7">
+              <button
+                type="button"
+                onClick={openFilm}
+                aria-label="Open HALCYON case study"
+                className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#F2F0EA] px-4 py-2.5 text-xs font-semibold text-[#171716] shadow-lg transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-5 sm:text-sm"
+              >
                 <Play className="h-4 w-4 fill-current" aria-hidden="true" />
-                Watch the film
-              </span>
+                View case study
+              </button>
               <span className="hidden items-center gap-2 rounded-full border border-white/25 bg-black/45 px-4 py-2 text-xs text-white/82 backdrop-blur-sm sm:inline-flex">
                 <Volume2 className="h-4 w-4" aria-hidden="true" />
-                Sound opens in case study
+                Use the speaker for sound
               </span>
-            </button>
+            </div>
           </div>
         </Reveal>
 
@@ -170,42 +137,6 @@ export default function HalcyonFeature() {
           </div>
         </div>
 
-        <Reveal delay={0.12}>
-          <div className="mt-16 flex items-end justify-between gap-5 border-t border-white/15 pt-6">
-            <div>
-              <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#63D7CE]">
-                Production system
-              </p>
-              <h3 className="mt-3 font-display text-2xl font-medium sm:text-3xl">
-                Designed before the first frame.
-              </h3>
-            </div>
-            <p className="hidden max-w-sm text-right text-sm leading-relaxed text-white/45 md:block">
-              Character, product, environment, and final-button references
-              kept the escalating world coherent across twelve cuts.
-            </p>
-          </div>
-
-          <div className="mt-7 grid gap-3 md:grid-cols-2 xl:grid-cols-6">
-            {referenceFrames.map((frame) => (
-              <figure
-                key={frame.src}
-                className={`group/reference relative aspect-video overflow-hidden rounded-2xl bg-white/5 ${frame.className}`}
-              >
-                <Image
-                  src={frame.src}
-                  alt={frame.alt}
-                  fill
-                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 ease-studio group-hover/reference:scale-[1.025]"
-                />
-                <figcaption className="absolute bottom-3 left-3 rounded-full bg-black/55 px-3 py-1.5 text-[10px] uppercase tracking-[0.16em] text-white/80 backdrop-blur-sm">
-                  {frame.label}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </Reveal>
       </div>
 
       <WorkModal project={selected} onClose={closeModal} />

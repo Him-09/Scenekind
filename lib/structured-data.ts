@@ -33,7 +33,10 @@ function organizationSchema() {
     image: absoluteUrl(ogImage),
     description: siteDescription,
     foundingDate: "2026",
-    sameAs: ["https://www.instagram.com/scenekindstudio/"],
+    sameAs: [
+      "https://www.instagram.com/scenekindstudio/",
+      "https://www.tiktok.com/@scenekindstudio",
+    ],
     slogan: "AI-first product ad production for brands that need campaign assets fast.",
     knowsAbout: [
       "AI commercials",

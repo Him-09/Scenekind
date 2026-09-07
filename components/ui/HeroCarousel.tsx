@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import VideoTile from "@/components/ui/VideoTile";
 import { cn } from "@/lib/cn";
 
@@ -9,6 +10,7 @@ export type CarouselItem = {
   poster?: string;
   label: string;
   caption: string;
+  href: string;
 };
 
 type HeroCarouselProps = {
@@ -42,11 +44,13 @@ export default function HeroCarousel({
         )}
       >
         {items.map((item) => (
-          <div
+          <Link
             key={item.src}
+            href={item.href}
+            aria-label={`${item.label} — view ${item.href === "/#halcyon" ? "featured commercial" : "selected work"}`}
             data-carousel-tile
             className={cn(
-              "relative shrink-0 snap-start",
+              "group/card relative shrink-0 snap-start rounded-tile focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink",
               compact
                 ? "w-[156px] sm:w-[190px] md:w-[220px]"
                 : "w-[220px] lg:w-[260px] xl:w-[300px] 2xl:w-[320px]"
@@ -65,7 +69,7 @@ export default function HeroCarousel({
               <p className="text-sm font-medium text-white">{item.label}</p>
               <p className="mt-0.5 text-xs text-white/70">{item.caption}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

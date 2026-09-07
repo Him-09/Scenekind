@@ -10,6 +10,11 @@ const nav = [
   { href: "/contact", label: "Contact" },
 ];
 
+const socials = [
+  { href: "https://www.instagram.com/scenekindstudio/", label: "Instagram" },
+  { href: "https://www.tiktok.com/@scenekindstudio", label: "TikTok" },
+];
+
 export default function Footer() {
   return (
     <footer className="rule" aria-label="Footer">
@@ -40,7 +45,7 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <div>
+          <div className="flex flex-col items-start gap-4">
             <Link
               href={`mailto:${contactEmail}`}
               data-mixpanel-event="Email Clicked"
@@ -51,6 +56,24 @@ export default function Footer() {
             >
               {contactEmail}
             </Link>
+            <div className="flex items-center gap-4">
+              {socials.map((social) => (
+                <Link
+                  key={social.href}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-mixpanel-event="Social Clicked"
+                  data-mixpanel-properties={JSON.stringify({
+                    platform: social.label,
+                    location: "Footer",
+                  })}
+                  className="text-sm text-mist underline-offset-4 transition-colors duration-300 hover:text-ink hover:underline"
+                >
+                  {social.label} ↗︎
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
 

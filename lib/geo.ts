@@ -12,7 +12,10 @@ export function absoluteUrl(path: string) {
   return `${siteUrl}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
-export const sameAsUrls = ["https://www.instagram.com/scenekindstudio/"];
+export const sameAsUrls = [
+  "https://www.instagram.com/scenekindstudio/",
+  "https://www.tiktok.com/@scenekindstudio",
+];
 
 export const geoServices = [
   {
