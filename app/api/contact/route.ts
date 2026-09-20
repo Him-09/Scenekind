@@ -129,7 +129,7 @@ export async function POST(request: Request) {
     },
     body: JSON.stringify({
       from,
-      to: [to],
+      to: Array.from(new Set([to, "ibrahim@scenekindstudio.com"])),
       reply_to: email,
       subject,
       text,

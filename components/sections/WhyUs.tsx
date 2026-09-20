@@ -12,8 +12,8 @@ import Reveal from "@/components/ui/Reveal";
 const benefits = [
   {
     icon: Timer,
-    title: "First ad sprint in 24 hours",
-    body: "Starter Sprint gives you three hooks on one product, delivered as three ready-to-run ads within 24 hours.",
+    title: "Three hooks. One focused sprint.",
+    body: "Starter Sprint gives you three hooks on one product, delivered as three ready-to-run ads. We confirm the delivery date after agreeing the brief, assets and production slot.",
   },
   {
     icon: MapPinOff,

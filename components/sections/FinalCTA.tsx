@@ -25,7 +25,7 @@ export default function FinalCTA() {
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-[#F2F0EA]/65 md:text-lg">
               Send your best current ad, product page, or launch context. We
-              send back a written Creative Teardown with three untested angles.
+              send back a written Creative Teardown with three proposed angles.
             </p>
             <div className="mt-10 flex justify-center">
               <Button

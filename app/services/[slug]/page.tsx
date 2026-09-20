@@ -169,7 +169,7 @@ export default function ServicePage({ params }: ServicePageProps) {
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[#F2F0EA]/62 md:text-base">
                 Send your current ad, product page, or launch context. We send
-                back a free written Creative Teardown with three untested
+                back a free written Creative Teardown with three proposed
                 angles.
               </p>
             </div>

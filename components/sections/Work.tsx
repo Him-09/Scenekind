@@ -51,7 +51,7 @@ export default function Work() {
           eyebrow="Work"
           title="Selected work across the formats we produce."
           accent="the formats we produce."
-          intro="Hero films, product spotlights, demo ads, and creator-style video built to show the range of campaigns we can ship. Open any card for the full breakdown."
+          intro="Creative concepts and production examples across hero films, product spotlights, demos and creator-style video. Brand names identify the products shown; inclusion does not imply a client relationship or performance results. Open any card for the creative breakdown."
         />
         <div className="work-grid mt-12 grid items-start gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 min-[1280px]:mx-auto min-[1280px]:max-w-[60rem] min-[1280px]:grid-cols-4">
           {mosaicColumns.map((column, columnIndex) => (

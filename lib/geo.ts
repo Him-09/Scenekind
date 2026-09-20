@@ -121,7 +121,7 @@ export const geoOffers = [
     url: absoluteUrl("/contact?intent=teardown"),
     availability: "https://schema.org/InStock",
     description:
-      "A free written audit of a brand's current ad, product page, or launch context with three untested creative angles.",
+      "A free written review of a brand's current ad, product page, or launch context with three proposed creative angles.",
   },
   {
     id: "starter-sprint",

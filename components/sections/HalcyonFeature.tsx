@@ -89,11 +89,11 @@ export default function HalcyonFeature() {
               <button
                 type="button"
                 onClick={openFilm}
-                aria-label="Open HALCYON case study"
+                aria-label="Open HALCYON creative breakdown"
                 className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#F2F0EA] px-4 py-2.5 text-xs font-semibold text-[#171716] shadow-lg transition-transform duration-300 hover:-translate-y-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:px-5 sm:text-sm"
               >
                 <Play className="h-4 w-4 fill-current" aria-hidden="true" />
-                View case study
+                View creative breakdown
               </button>
               <span className="hidden items-center gap-2 rounded-full border border-white/25 bg-black/45 px-4 py-2 text-xs text-white/82 backdrop-blur-sm sm:inline-flex">
                 <Volume2 className="h-4 w-4" aria-hidden="true" />
